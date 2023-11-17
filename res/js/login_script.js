@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
     // FirebaseUI config.
 	const auth = firebase.auth();
     var uiConfig = {
-		signInSuccessUrl: '/emm.html',
+		signInSuccessUrl: './emm.html',
 		signInOptions: [
 			{
 				provider: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 			}
 		],
 		// Terms of service url.
-		tosUrl: '/index.html'
+		tosUrl: './index.html'
     };
 
 	const user = auth.currentUser;
@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
 		user.getIdToken().then(function (token) {
 			document.cookie = "token=" + token;
 		});
-		window.location.replace('/emm.html'); 
+		window.location.replace('./emm.html'); 
 	} else {
 	// No user is signed in.
 	}
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 				// user information.
 				document.cookie = "token=" + token;
 			});
-			window.location.replace('/emm.html'); 
+			window.location.replace('./emm.html'); 
 		} else {
 			// User is signed out.
 			// Initialize the FirebaseUI Widget using Firebase.
