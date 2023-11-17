@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chingluh Group - EMM</title>
+
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+	<link href="/res/fontawesome/fontawesome.css" rel="stylesheet">
+	
+
+	<link href="/res/v2022-style.css" rel="stylesheet" type="text/css" charset="utf-8">
+	<link href="/res/v2022-size.css" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="/res/v2022-style.js" type="text/javascript" charset="utf-8"></script>
+
+    <style media="screen">
+	  .sticky {
+			position: fixed;
+			z-index: 9999;
+			background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+			--tw-bg-opacity: 0.8;
+			transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+			transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+			transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-duration: 150ms;
+			-webkit-backdrop-filter: blur(5px);
+			backdrop-filter: blur(5px);
+			box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 10%);
+		}
+		.section-h100-s56{
+			height: calc(100vh - 56px);
+		}
+    </style>
+
+    <script src="/res/js/emm_script.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/res/js/emmsolution.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body id="emm-body" hidden=true>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBDertcdRKaMypKdoLxCA5DtIaZHfEeVxM",
+            authDomain: "chingluhgroupemm.firebaseapp.com",
+            // databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+            projectId: "chingluhgroupemm",
+            // storageBucket: "<BUCKET>.appspot.com",
+            messagingSenderId: "237937338576",
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        gapi.load("client:auth2", function() {
+            gapi.auth2.init({client_id: "459934502496-prpgktc8kdgrnb3t3sakoi8gc4at6nao.apps.googleusercontent.com"});
+        });
+    </script>
+		<div id="wrapper" class="clg-wrapper">
+            <div class="clg-wrapper-content" id="page-content-wrapper">
+                <div class="clg-apps-nav">
+                    <div class="clg-apps-nav-header">
+                        <div class="clg-apps-nav-address" style="z-index: 100">
+                            <div class="apps-name clg-d-none clg-d-lg-block">
+                                <span class="app-name">Enterprise Mobility Management</span>
+                            </div>
+                            <div class="clg-apps-nav-username">
+                                <div class="dropdown">
+                                    <a type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="/res/images/avatar/user.png" class="rounded-circle clg-hover-zoom-200" style="width: 40px;height: 40px;object-fit: contain;" alt="Avatar">
+                                        <span id="login-fullname">Fullname</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#" id="sign-out" hidden=true><i class="fad fa-sign-out size-18 clg-text-cadetblue w-30px"></i>Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clg-apps-nav-menu">
+                        <div class="clg-apps-nav-logo">
+                            <a class="logo-open" href="#">
+                                <div class="logo-content">
+                                    <img src="/res/images/Chingluh_Primary_2.png" alt="Chingluh Logo">
+                                    <div class="app-title">Ching Luh Group - EMM</div>
+                                    <div class="app-email">hongthinh.le@chingluh.com</div>
+                                </div>
+                            </a>
+                            <div class="logo-close">
+                                <div class="logo-content">
+                                    <img src="/res/images/Chingluh_Primary_2.png" alt="Chingluh Logo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clg-apps-nav-toggle"></div>
+                        <ul>
+                            <li navpage="clg-apps-tab-dashboard" class="clg-apps-nav-list-menu">
+                                <b></b><b></b><b></b><b></b>
+                                <a>
+                                    <span class="icon"><i class="fa-solid fa-browsers"></i></span>
+                                    <span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li navpage="clg-apps-tab-enterprise" class="clg-apps-nav-list-menu">
+                                <b></b><b></b><b></b><b></b>
+                                <a>
+                                    <span class="icon"><i class="fa-solid fa-buildings"></i></span>
+                                    <span class="title">Enterprise</span>
+                                </a>
+                            </li>
+                            <li navpage="clg-apps-tab-policies" class="clg-apps-nav-list-menu active">
+                                <b></b><b></b><b></b><b></b>
+                                <a>
+                                    <span class="icon"><i class="fa-duotone fa-book-bookmark"></i></span>
+                                    <span class="title">Policies</span>
+                                </a>
+                            </li>
+                            <li navpage="clg-apps-tab-devices" class="clg-apps-nav-list-menu">
+                                <b></b><b></b><b></b><b></b>
+                                <a>
+                                    <span class="icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                                    <span class="title">Devices</span>
+                                </a>
+                            </li>
+                            <li navpage="clg-apps-tab-applications" class="clg-apps-nav-list-menu">
+                                <b></b><b></b><b></b><b></b>
+                                <a>
+                                    <span class="icon"><i class="fa-solid fa-box-circle-check"></i></span>
+                                    <span class="title">Applications</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clg-apps-nav-authority">
+                            <span class="managed">Managed by PCC-COE Team</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clg-apps-nav-content">
+                    <div id="clg-apps-tab-dashboard" class="clg-apps-nav-pane">
+                        <button class="btn btn-outline-success m-3" onclick="EMM_Solution_JSClass.EMM_Policies_Authenticate()">Authenticate</button>
+                        <button class="btn btn-outline-success m-3" onclick="execute()">Get Devices</button>
+                    </div>
+                    <div id="clg-apps-tab-enterprise" class="clg-apps-nav-pane">
+
+                    </div>
+                    <div id="clg-apps-tab-policies" class="clg-apps-nav-pane show">
+                        <div class="content-pane clg-p1rem">
+                            <div class="h-100 row m-0">
+                                <div class="h-100 col-5">
+                                    <div class="h-200px clg-container-button">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="input-group input-group-sm mb-3 w-100">
+                                                    <button class="btn btn-outline-primary btn-sm w-50"
+                                                    onclick="EMM_Solution_JSClass.EMM_Policies_GetALL()">
+                                                        <i class="fa-duotone fa-arrows-rotate"></i> Refresh
+                                                    </button>
+                                                    <button class="btn btn-outline-primary btn-sm w-50"><i class="fa-duotone fa-shield-plus"></i> Add Policie</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="input-group input-group-sm mb-3">
+                                                    <label class="input-group-text" for="emm-policies-list">Policie:</label>
+                                                    <select class="form-select" id="emm-policies-list" onchange="EMM_Solution_JSClass.EMM_Policies_Select()">
+                                                        <option selected>Choose...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="text-center">Device Owner Lock Screen Info</span>
+                                                <div class="input-group-sm mb-3">
+                                                    <textarea class="form-control emm-policy-input" emm-policy-fields="deviceOwnerLockScreenInfo" id="policy-deviceOwnerLockScreenInfo" rows="3" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="text-center">Short Support Message</span>
+                                                <div class="input-group-sm mb-3">
+                                                    <textarea class="form-control emm-policy-input" emm-policy-fields="shortSupportMessage" id="policy-shortSupportMessage" rows="3" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hs-100pe-200px clg-container-list">
+                                        <div class="title">
+                                            Policy
+                                        </div>
+                                        <div class="content-auto border rounded row row-cols-2">
+                                            <div class="col">
+                                                <div class="input-group input-group-sm mb-2">
+                                                    <label class="input-group-text" for="policy-locationMode">Location:</label>
+                                                    <select class="form-select policy-select" id="policy-locationMode">
+                                                        <option value="LOCATION_USER_CHOICE" selected>LOCATION_USER_CHOICE</option>
+                                                        <option value="LOCATION_ENFORCED">LOCATION_ENFORCED</option>
+                                                        <option value="LOCATION_DISABLED">LOCATION_DISABLED</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col ">
+                                                <div class="input-group input-group-sm mb-2">
+                                                    <label class="input-group-text" for="policy-passwordRequirements">Password:</label>
+                                                    <div class="input-group-text">
+                                                        <input class="form-check-input mt-0" type="checkbox" id="policy-passwordRequirements">
+                                                    </div>
+                                                    <select class="form-select policy-select" id="policy-passwordMinimumLength">
+                                                        <option value="6" selected>6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                    </select>
+                                                    <select class="form-select policy-select w-160px" id="policy-passwordQuality">
+                                                        <option value="ALPHABETIC" selected>ALPHABETIC</option>
+                                                        <option value="ALPHANUMERIC">ALPHANUMERIC</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="factoryResetDisabled" type="checkbox" role="switch" id="policy-factoryResetDisabled">
+                                                <label class="form-check-label" for="policy-factoryResetDisabled">Factory Reset Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="cameraAccess" type="checkbox" role="switch" id="policy-cameraAccess">
+                                                <label class="form-check-label" for="policy-cameraAccess">Camera Access</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="screenCaptureDisabled" type="checkbox" role="switch" id="policy-screenCaptureDisabled">
+                                                <label class="form-check-label" for="policy-screenCaptureDisabled">Screen Capture Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="addUserDisabled" type="checkbox" role="switch" id="policy-addUserDisabled">
+                                                <label class="form-check-label" for="policy-addUserDisabled">Add User Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="removeUserDisabled" type="checkbox" role="switch" id="policy-removeUserDisabled">
+                                                <label class="form-check-label" for="policy-removeUserDisabled">Remove User Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="setUserIconDisabled" type="checkbox" role="switch" id="policy-setUserIconDisabled">
+                                                <label class="form-check-label" for="policy-setUserIconDisabled">Set User Icon Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="adjustVolumeDisabled" type="checkbox" role="switch" id="policy-adjustVolumeDisabled">
+                                                <label class="form-check-label" for="policy-adjustVolumeDisabled">Adjust Volume Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="installAppsDisabled" type="checkbox" role="switch" id="policy-installAppsDisabled">
+                                                <label class="form-check-label" for="policy-installAppsDisabled">Install Apps Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="uninstallAppsDisabled" type="checkbox" role="switch" id="policy-uninstallAppsDisabled">
+                                                <label class="form-check-label" for="policy-uninstallAppsDisabled">Uninstall Apps Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="mountPhysicalMediaDisabled" type="checkbox" role="switch" id="policy-mountPhysicalMediaDisabled">
+                                                <label class="form-check-label" for="policy-mountPhysicalMediaDisabled">Mount Physical Media Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="modifyAccountsDisabled" type="checkbox" role="switch" id="policy-modifyAccountsDisabled">
+                                                <label class="form-check-label" for="policy-modifyAccountsDisabled">Modify Accounts Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="bluetoothDisabled" type="checkbox" role="switch" id="policy-bluetoothDisabled">
+                                                <label class="form-check-label" for="policy-bluetoothDisabled">Bluetooth Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="bluetoothConfigDisabled" type="checkbox" role="switch" id="policy-bluetoothConfigDisabled">
+                                                <label class="form-check-label" for="policy-bluetoothConfigDisabled">Bluetooth Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="bluetoothContactSharingDisabled" type="checkbox" role="switch" id="policy-bluetoothContactSharingDisabled">
+                                                <label class="form-check-label" for="policy-bluetoothContactSharingDisabled">Bluetooth Contact Sharing Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="usbFileTransferDisabled" type="checkbox" role="switch" id="policy-usbFileTransferDisabled">
+                                                <label class="form-check-label" for="policy-usbFileTransferDisabled">Usb File Transfer Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="cellBroadcastsConfigDisabled" type="checkbox" role="switch" id="policy-cellBroadcastsConfigDisabled">
+                                                <label class="form-check-label" for="policy-cellBroadcastsConfigDisabled">Cell Broadcasts Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="credentialsConfigDisabled" type="checkbox" role="switch" id="policy-credentialsConfigDisabled">
+                                                <label class="form-check-label" for="policy-credentialsConfigDisabled">Credentials Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="mobileNetworksConfigDisabled" type="checkbox" role="switch" id="policy-mobileNetworksConfigDisabled">
+                                                <label class="form-check-label" for="policy-mobileNetworksConfigDisabled">Mobile Networks Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="vpnConfigDisabled" type="checkbox" role="switch" id="policy-vpnConfigDisabled">
+                                                <label class="form-check-label" for="policy-vpnConfigDisabled">Vpn Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="wifiConfigDisabled" type="checkbox" role="switch" id="policy-wifiConfigDisabled">
+                                                <label class="form-check-label" for="policy-wifiConfigDisabled">Wifi Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="createWindowsDisabled" type="checkbox" role="switch" id="policy-createWindowsDisabled">
+                                                <label class="form-check-label" for="policy-createWindowsDisabled">Create Windows Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="networkResetDisabled" type="checkbox" role="switch" id="policy-networkResetDisabled">
+                                                <label class="form-check-label" for="policy-networkResetDisabled">Network Reset Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="tetheringConfigDisabled" type="checkbox" role="switch" id="policy-tetheringConfigDisabled">
+                                                <label class="form-check-label" for="policy-tetheringConfigDisabled">Tethering Config Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="outgoingBeamDisabled" type="checkbox" role="switch" id="policy-outgoingBeamDisabled">
+                                                <label class="form-check-label" for="policy-outgoingBeamDisabled">Outgoing Beam Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="outgoingCallsDisabled" type="checkbox" role="switch" id="policy-outgoingCallsDisabled">
+                                                <label class="form-check-label" for="policy-outgoingCallsDisabled">Outgoing Calls Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="smsDisabled" type="checkbox" role="switch" id="policy-smsDisabled">
+                                                <label class="form-check-label" for="policy-smsDisabled">Sms Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="shareLocationDisabled" type="checkbox" role="switch" id="policy-shareLocationDisabled">
+                                                <label class="form-check-label" for="policy-shareLocationDisabled">Share Location Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="setWallpaperDisabled" type="checkbox" role="switch" id="policy-setWallpaperDisabled">
+                                                <label class="form-check-label" for="policy-setWallpaperDisabled">Set Wallpaper Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="dataRoamingDisabled" type="checkbox" role="switch" id="policy-dataRoamingDisabled">
+                                                <label class="form-check-label" for="policy-dataRoamingDisabled">Data Roaming Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="funDisabled" type="checkbox" role="switch" id="policy-funDisabled">
+                                                <label class="form-check-label" for="policy-funDisabled">Fun Disabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="kioskCustomLauncherEnabled" type="checkbox" role="switch" id="policy-kioskCustomLauncherEnabled">
+                                                <label class="form-check-label" for="policy-kioskCustomLauncherEnabled">Kiosk Custom Launcher Enabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="skipFirstUseHintsEnabled" type="checkbox" role="switch" id="policy-skipFirstUseHintsEnabled">
+                                                <label class="form-check-label" for="policy-skipFirstUseHintsEnabled">Skip First Use Hints Enabled</label>
+                                            </div>
+                                            <div class="col form-check form-switch">
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="privateKeySelectionEnabled" type="checkbox" role="switch" id="policy-privateKeySelectionEnabled">
+                                                <label class="form-check-label" for="policy-privateKeySelectionEnabled">Private Key Selection Enabled</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-100 col-7">
+                                    <div class="h-50px clg-container-button">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <button class="btn btn-outline-success btn-sm"><i class="fa-brands fa-android"></i> Add App</button>
+                                            <label class="input-group-text" for="emm-policies-applications-list">Application:</label>
+                                            <select class="form-select" id="emm-policies-applications-list"
+                                            onchange="EMM_Solution_JSClass.EMM_Policies_Applications_Select()">
+                                                <option selected>Choose...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row h-290px">
+                                        <div class="h-100 col-6">
+                                            <div class="h-100 clg-container-list">
+                                                <div class="title">
+                                                    Application Policy
+                                                </div>
+                                                <div class="content-auto border rounded mb-3">
+                                                    <div class="input-group input-group-sm mb-2">
+                                                        <span class="input-group-text">Package Name:</span>
+                                                        <input type="text" class="form-control policy-individual-input" id="policy-individual-packageName" readonly>
+                                                    </div>
+                                                                                                        
+                                                    <div class="input-group input-group-sm mb-2">
+                                                        <label class="input-group-text w-180px" for="policy-individual-installType">Install Type:</label>
+                                                        <select class="form-select policy-individual-select" id="policy-individual-installType">
+                                                            <option value="" selected></option>
+                                                            <option value="INSTALL_TYPE_UNSPECIFIED">INSTALL_TYPE_UNSPECIFIED</option>
+                                                            <option value="PREINSTALLED">PREINSTALLED</option>
+                                                            <option value="FORCE_INSTALLED">FORCE_INSTALLED</option>
+                                                            <option value="BLOCKED" selected>BLOCKED</option>
+                                                            <option value="AVAILABLE">AVAILABLE</option>
+                                                            <option value="REQUIRED_FOR_SETUP">REQUIRED_FOR_SETUP</option>
+                                                            <option value="KIOSK">KIOSK</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-group input-group-sm mb-2">
+                                                        <label class="input-group-text w-180px" for="policy-individual-defaultPermissionPolicy">Default Permission Policy:</label>
+                                                        <select class="form-select policy-individual-select" id="policy-individual-defaultPermissionPolicy">
+                                                            <option value="" selected></option>
+                                                            <option value="PERMISSION_POLICY_UNSPECIFIED">PERMISSION_POLICY_UNSPECIFIED</option>
+                                                            <option value="PROMPT">PROMPT</option>
+                                                            <option value="GRANT">GRANT</option>
+                                                            <option value="DENY">DENY</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <label class="input-group-text w-180px" for="policy-individual-delegatedScopes">Delegated Scopes:</label>
+                                                        <select class="form-select policy-individual-select" id="policy-individual-delegatedScopes">
+                                                            <option value="" selected></option>
+                                                            <option value="DELEGATED_SCOPE_UNSPECIFIED">DELEGATED_SCOPE_UNSPECIFIED</option>
+                                                            <option value="CERT_INSTALL">CERT_INSTALL</option>
+                                                            <option value="MANAGED_CONFIGURATIONS">MANAGED_CONFIGURATIONS</option>
+                                                            <option value="BLOCK_UNINSTALL">BLOCK_UNINSTALL</option>
+                                                            <option value="PERMISSION_GRANT">PERMISSION_GRANT</option>
+                                                            <option value="PACKAGE_ACCESS">PACKAGE_ACCESS</option>
+                                                            <option value="ENABLE_SYSTEM_APP">ENABLE_SYSTEM_APP</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="row m-0">
+                                                        <div class="col-6">
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input policy-individual-input" type="checkbox" role="switch" id="policy-individual-disabled">
+                                                                <label class="form-check-label" for="policy-individual-disabled">Disabled</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input policy-individual-input" type="checkbox" role="switch" id="policy-individual-permissionGrants">
+                                                                <label class="form-check-label" for="policy-individual-permissionGrants">Permission Grant</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="h-100 col-6">
+                                            <div class="h-100 clg-container-list">
+                                                <div class="title">
+                                                    Permission Grants
+                                                </div>
+                                                <div class="content-auto border rounded mb-3" id="policy-individual-permissionGrants-list">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hs-100pe-390px clg-container-list">
+                                        <div class="title">
+                                            Application Policy - JSON representation
+                                        </div>
+                                        <div class="content-auto border rounded" id="emm-policies-preview-json">
+                                        </div>
+                                    </div>
+                                    <div class="h-50px clg-container-button pt-3">
+                                        <div class="input-group input-group-sm mb-3- w-100 text-end">
+                                            <button class="btn btn-outline-success btn-sm w-200px"
+                                            onclick="EMM_Solution_JSClass.EMM_Policies_Preview()"><i class="fa-solid fa-airplay"></i> Preview</button>
+                                            <button class="btn btn-outline-primary btn-sm w-200px"><i class="fa-solid fa-paper-plane"></i> Update Policy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="h-100 col-4">
+                                    <div class="h-50px clg-container-button">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <button class="btn btn-outline-primary form-control" type="button"><i class="fa-duotone fa-paper-plane"></i> Patch</button>
+                                        </div>
+                                    </div>
+                                    <div class="h-100-s50px clg-container-list">
+                                        <div class="title">
+                                            Policy - JSON representation
+                                        </div>
+                                        <div class="content-auto border rounded">
+                                            
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clg-apps-tab-devices" class="clg-apps-nav-pane">
+                        <div class="content-pane clg-p1rem">
+                            <div class="h-100 row">
+                                <div class="h-100 col-4">
+                                    <div class="h-50px clg-container-button">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <button class="btn btn-outline-primary btn-sm"
+                                            onclick="EMM_Solution_JSClass.EMM_Devices_GetALL()">
+                                                <i class="fa-solid fa-mobile-screen"></i> Lists devices
+                                            </button>
+                                            <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fa-duotone fa-shield-plus"></i> Add Device
+                                            </button>
+                                            <label class="input-group-text" for="emm-devices-list">Device:</label>
+                                            <select class="form-select" id="emm-devices-list" onchange="EMM_Solution_JSClass.EMM_Devices_Select()">
+                                                <option selected>Choose...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="h-100-s50px clg-container-list">
+                                        <div class="title">
+                                            Device
+                                        </div>
+                                        <div class="content-auto border rounded">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <span class="input-group-text" id="device-name">Name</span>
+                                                <input type="text" class="form-control" aria-describedby="device-name">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-2">
+                                                <span class="input-group-text" id="device-shortSupportMessage">Short Support Message</span>
+                                                <input type="text" class="form-control" aria-describedby="device-shortSupportMessage">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-2">
+                                                <span class="input-group-text" id="device-longSupportMessage">Long Support Message</span>
+                                                <input type="text" class="form-control" aria-describedby="device-longSupportMessage">
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-factoryResetDisabled">
+                                                <label class="form-check-label" for="device-factoryResetDisabled">Factory Reset Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-cameraDisabled">
+                                                <label class="form-check-label" for="device-cameraDisabled">Camera Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-screenCaptureDisabled">
+                                                <label class="form-check-label" for="device-screenCaptureDisabled">Screen Capture Disabled</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-addUserDisabled">
+                                                <label class="form-check-label" for="device-addUserDisabled">Add User Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-adjustVolumeDisabled">
+                                                <label class="form-check-label" for="device-adjustVolumeDisabled">Adjust Volume Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-installAppsDisabled">
+                                                <label class="form-check-label" for="device-installAppsDisabled">Install Apps Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-uninstallAppsDisabled">
+                                                <label class="form-check-label" for="device-uninstallAppsDisabled">Uninstall Apps Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-mountPhysicalMediaDisabled">
+                                                <label class="form-check-label" for="device-mountPhysicalMediaDisabled">Mount Physical Media Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-modifyAccountsDisabled">
+                                                <label class="form-check-label" for="device-modifyAccountsDisabled">Modify Accounts Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-bluetoothDisabled">
+                                                <label class="form-check-label" for="device-bluetoothDisabled">Bluetooth Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-bluetoothConfigDisabled">
+                                                <label class="form-check-label" for="device-bluetoothConfigDisabled">Bluetooth Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-bluetoothContactSharingDisabled">
+                                                <label class="form-check-label" for="device-bluetoothContactSharingDisabled">Bluetooth Contact Sharing Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-usbFileTransferDisabled">
+                                                <label class="form-check-label" for="device-usbFileTransferDisabled">Usb File Transfer Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-cellBroadcastsConfigDisabled">
+                                                <label class="form-check-label" for="device-cellBroadcastsConfigDisabled">Cell Broadcasts Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-credentialsConfigDisabled">
+                                                <label class="form-check-label" for="device-credentialsConfigDisabled">Credentials Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-mobileNetworksConfigDisabled">
+                                                <label class="form-check-label" for="device-mobileNetworksConfigDisabled">Mobile Networks Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-tetheringConfigDisabled">
+                                                <label class="form-check-label" for="device-tetheringConfigDisabled">Tethering Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-vpnConfigDisabled">
+                                                <label class="form-check-label" for="device-vpnConfigDisabled">Vpn Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-wifiConfigDisabled">
+                                                <label class="form-check-label" for="device-wifiConfigDisabled">Wifi Config Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-createWindowsDisabled">
+                                                <label class="form-check-label" for="device-createWindowsDisabled">Create Windows Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-networkResetDisabled">
+                                                <label class="form-check-label" for="device-networkResetDisabled">Network Reset Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-outgoingBeamDisabled">
+                                                <label class="form-check-label" for="device-outgoingBeamDisabled">Outgoing Beam Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-outgoingCallsDisabled">
+                                                <label class="form-check-label" for="device-outgoingCallsDisabled">Outgoing Calls Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-smsDisabled">
+                                                <label class="form-check-label" for="device-smsDisabled">Sms Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-removeUserDisabled">
+                                                <label class="form-check-label" for="device-removeUserDisabled">Remove User Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-shareLocationDisabled">
+                                                <label class="form-check-label" for="device-shareLocationDisabled">Share Location Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-setUserIconDisabled">
+                                                <label class="form-check-label" for="device-setUserIconDisabled">Set User Icon Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-setWallpaperDisabled">
+                                                <label class="form-check-label" for="device-setWallpaperDisabled">Set Wallpaper Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-dataRoamingDisabled">
+                                                <label class="form-check-label" for="device-dataRoamingDisabled">Data Roaming Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-funDisabled">
+                                                <label class="form-check-label" for="device-funDisabled">Fun Disabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-kioskCustomLauncherEnabled">
+                                                <label class="form-check-label" for="device-kioskCustomLauncherEnabled">Kiosk Custom Launcher Enabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-skipFirstUseHintsEnabled">
+                                                <label class="form-check-label" for="device-skipFirstUseHintsEnabled">Skip First Use Hints Enabled</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="device-privateKeySelectionEnabled">
+                                                <label class="form-check-label" for="device-privateKeySelectionEnabled">Private Key Selection Enabled</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-100 col-4">
+                                    <div class="h-50px clg-container-button">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <button class="btn btn-outline-success btn-sm"><i class="fa-brands fa-android"></i> Add App</button>
+                                            <label class="input-group-text" for="inputGroupSelect01">Application:</label>
+                                            <select class="form-select" id="inputGroupSelect01">
+                                                <option selected>Choose...</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="h-240px clg-container-list">
+                                        <div class="title">
+                                            Application Policy
+                                        </div>
+                                        <div class="content-auto border rounded mb-3">
+                                            <div class="input-group input-group-sm mb-2">
+                                                <span class="input-group-text" id="applicationpolicy-packageName">Package Name:</span>
+                                                <input type="text" class="form-control" aria-describedby="applicationpolicy-packageName">
+                                            </div>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="applicationpolicy-disabled">
+                                                <label class="form-check-label" for="applicationpolicy-disabled">Disabled</label>
+                                            </div>
+                                            <div class="input-group input-group-sm mb-2">
+                                                <label class="input-group-text" for="applicationpolicy-installType">Install Type:</label>
+                                                <select class="form-select" id="applicationpolicy-installType">
+                                                    <option value="INSTALL_TYPE_UNSPECIFIED" selected>INSTALL_TYPE_UNSPECIFIED</option>
+                                                    <option value="PREINSTALLED">PREINSTALLED</option>
+                                                    <option value="FORCE_INSTALLED">FORCE_INSTALLED</option>
+                                                    <option value="BLOCKED">BLOCKED</option>
+                                                    <option value="AVAILABLE">AVAILABLE</option>
+                                                    <option value="REQUIRED_FOR_SETUP">REQUIRED_FOR_SETUP</option>
+                                                    <option value="KIOSK">KIOSK</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group input-group-sm mb-2">
+                                                <label class="input-group-text" for="applicationpolicy-defaultPermissionPolicy">Default Permission Policy:</label>
+                                                <select class="form-select" id="applicationpolicy-defaultPermissionPolicy">
+                                                    <option value="PERMISSION_POLICY_UNSPECIFIED" selected>PERMISSION_POLICY_UNSPECIFIED</option>
+                                                    <option value="PROMPT">PROMPT</option>
+                                                    <option value="GRANT">GRANT</option>
+                                                    <option value="DENY">DENY</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group input-group-sm">
+                                                <label class="input-group-text" for="applicationpolicy-delegatedScopes">Default Permission Policy:</label>
+                                                <select class="form-select" id="applicationpolicy-delegatedScopes">
+                                                    <option value="DELEGATED_SCOPE_UNSPECIFIED" selected>DELEGATED_SCOPE_UNSPECIFIED</option>
+                                                    <option value="CERT_INSTALL">CERT_INSTALL</option>
+                                                    <option value="MANAGED_CONFIGURATIONS">MANAGED_CONFIGURATIONS</option>
+                                                    <option value="BLOCK_UNINSTALL">BLOCK_UNINSTALL</option>
+                                                    <option value="PERMISSION_GRANT">PERMISSION_GRANT</option>
+                                                    <option value="PACKAGE_ACCESS">PACKAGE_ACCESS</option>
+                                                    <option value="ENABLE_SYSTEM_APP">ENABLE_SYSTEM_APP</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hs-100pe-290px clg-container-list">
+                                        <div class="title">
+                                            Application Policy - JSON representation
+                                        </div>
+                                        <div class="content-auto border rounded">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-100 col-4">
+                                    <div class="h-50px clg-container-button">
+                                        <div class="input-group input-group-sm mb-3">
+                                            <button class="btn btn-outline-primary form-control" type="button"><i class="fa-duotone fa-paper-plane"></i> Patch</button>
+                                        </div>
+                                    </div>
+                                    <div class="h-100-s50px clg-container-list">
+                                        <div class="title">
+                                            Policy - JSON representation
+                                        </div>
+                                        <div class="content-auto border rounded">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clg-apps-tab-applications" class="clg-apps-nav-pane">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script>
+            const CLG_Toast_Class = new CLG_Toast("");
+            const CLG_Navigation_Class = new CLG_Navigation();
+            const EMM_Solution_JSClass = new EMM_Solution();
+        </script>
+	</body>
+</html>

@@ -1,0 +1,1291 @@
+{
+    "policies": [
+        {
+            "name": "enterprises/LC01tmuh69/policies/clg-pcc-cellphone-smj260g",
+            "version": "2",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                }
+            ],
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+            "version": "4",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "addUserDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+            "version": "7",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.chingluhgroup.qrcodeattendancerecord",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "addUserDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "bluetoothDisabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
+            "version": "21",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "AVAILABLE"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.zing.zalo",
+                    "installType": "FORCE_INSTALLED",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "DENY"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takeprofilepicture",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "DENY"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.cameraconnect",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.assetmanagement",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.approveddocuments",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.emmsolution",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT"
+                }
+            ],
+            "factoryResetDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "locationMode": "LOCATION_ENFORCED",
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "version": "8",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED",
+                    "managedConfiguration": {
+                        "URLBlocklist": [
+                            "*"
+                        ],
+                        "URLAllowlist": [
+                            "pccinfo.chingluh.com.vn",
+                            "172.16.16.70"
+                        ],
+                        "Recommended": [
+                            "pccinfo.chingluh.com.vn"
+                        ],
+                        "IncognitoModeAvailability": "1",
+                        "ForceGoogleSafeSearch": "true",
+                        "HomepageLocation": "https://pccinfo.chingluh.com.vn"
+                    }
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.assetmanagement",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.approveddocuments",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "addUserDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "modifyAccountsDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "locationMode": "LOCATION_ENFORCED",
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
+            "version": "6",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.adobe.reader",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED",
+                    "managedConfiguration": {
+                        "URLBlocklist": [
+                            "*"
+                        ],
+                        "URLAllowlist": [
+                            "pccinfo.chingluh.com.vn",
+                            "172.16.16.6",
+                            "172.16.16.70"
+                        ],
+                        "Recommended": [
+                            "pccinfo.chingluh.com.vn"
+                        ],
+                        "IncognitoModeAvailability": "1",
+                        "ForceGoogleSafeSearch": "true",
+                        "HomepageLocation": "https://pccinfo.chingluh.com.vn"
+                    }
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        }
+    ],
+    "devices": [
+        {
+            "name": "enterprises/LC01tmuh69/devices/3054bdb134a3ae51",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T06:47:46.789Z",
+            "lastStatusReportTime": "2022-08-15T07:04:42.271Z",
+            "lastPolicySyncTime": "2022-08-16T04:47:03.045Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3AUIF,G996BXXU3AUIF",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRB13E3CE",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7536861184",
+                "totalInternalStorage": "6214660096"
+            },
+            "userName": "enterprises/LC01tmuh69/users/113050379211361630496",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/30967dcf84ac1423",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-05-09T08:19:10.227Z",
+            "lastStatusReportTime": "2022-08-16T04:13:14.733Z",
+            "lastPolicySyncTime": "2022-08-16T08:43:32.937Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3BUKG,G996BXXU3BUKG",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCT103G1HW",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7546355712",
+                "totalInternalStorage": "6326407168"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-16T03:44:24.906Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/111205294643957189582",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3274585a73d9f2ed",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T06:45:22.689Z",
+            "lastStatusReportTime": "2022-08-16T09:29:58.346Z",
+            "lastPolicySyncTime": "2022-08-16T09:11:17.863Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRB13X0PA",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7546355712",
+                "totalInternalStorage": "6343852032"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-16T03:09:02.693Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/110340894274459228822",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/331883bbacce2354",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T06:50:18.431Z",
+            "lastStatusReportTime": "2022-08-15T02:42:43.500Z",
+            "lastPolicySyncTime": "2022-08-15T06:41:28.171Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3AUIF,G996BXXU3AUIF",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRA1ESZGE",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7536852992",
+                "totalInternalStorage": "6214660096"
+            },
+            "userName": "enterprises/LC01tmuh69/users/115672791639831471739",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/33357f56028ccc93",
+            "managementMode": "PROFILE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "privateKeySelectionEnabled",
+                "nonComplianceReason": "API_LEVEL"
+                },
+                {
+                "settingName": "advancedSecurityOverrides",
+                "nonComplianceReason": "API_LEVEL",
+                "fieldPath": "advancedSecurityOverrides.developerSettings"
+                },
+                {
+                "settingName": "usbFileTransferDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "frpAdminIds",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "API_LEVEL"
+                },
+                {
+                "settingName": "smsDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "mobileNetworksConfigDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "mountPhysicalMediaDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "bluetoothDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                },
+                {
+                "settingName": "addUserDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-03-17T10:05:18.328Z",
+            "lastStatusReportTime": "2022-03-30T04:38:16.952Z",
+            "lastPolicySyncTime": "2022-03-30T04:45:13.559Z",
+            "appliedPolicyVersion": "4",
+            "apiLevel": 22,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "sc8830",
+                "deviceBasebandVersion": "T285XXU0API1",
+                "manufacturer": "samsung",
+                "serialNumber": "52005b4347a42600",
+                "model": "SM-T285"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+            "memoryInfo": {
+                "totalRam": "1485701120",
+                "totalInternalStorage": "2080194560"
+            },
+            "userName": "enterprises/LC01tmuh69/users/110358350248148484732",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/pMXU265RpaghjIY0AlMAnoAuQCUBrbZcGVP62QxhOLk",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "PERSONALLY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/33e93329077b1bd6",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-05-09T08:13:42.829Z",
+            "lastStatusReportTime": "2022-08-16T06:11:38.639Z",
+            "lastPolicySyncTime": "2022-08-16T07:05:56.185Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU1ATLD,G996BXXU1ATLD",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCR10H1G4X",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7537676288",
+                "totalInternalStorage": "6386028544"
+            },
+            "userName": "enterprises/LC01tmuh69/users/115157899955874530212",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/368e5438f4467d01",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-03-14T03:19:32.003Z",
+            "lastStatusReportTime": "2022-08-16T02:56:47.896Z",
+            "lastPolicySyncTime": "2022-08-16T08:58:44.619Z",
+            "appliedPolicyVersion": "7",
+            "apiLevel": 30,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "ums9230_4h10",
+                "deviceBasebandVersion": "A035FXXU1AUL4,A035FXXU1AUL4",
+                "manufacturer": "samsung",
+                "serialNumber": "R9HRC0JPD4A",
+                "model": "SM-A035F"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+            "memoryInfo": {
+                "totalRam": "3728433152",
+                "totalInternalStorage": "3435470848"
+            },
+            "userName": "enterprises/LC01tmuh69/users/102126373801451531309",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/MFzTNH-1B_JtV1BXshl-mfc2fQ4pI_WhitxkrPuh_gU",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/37cf5e9f7ddebd24",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "enrollmentTime": "2022-06-28T08:30:43.034Z",
+            "lastStatusReportTime": "2022-08-15T08:49:02.396Z",
+            "lastPolicySyncTime": "2022-08-16T03:32:30.564Z",
+            "appliedPolicyVersion": "6",
+            "apiLevel": 30,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "ums512_1h10",
+                "deviceBasebandVersion": "X205XXU1AVA7",
+                "manufacturer": "samsung",
+                "serialNumber": "R9PT20JHWEF",
+                "model": "SM-X205"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
+            "memoryInfo": {
+                "totalRam": "3683807232",
+                "totalInternalStorage": "3488788480"
+            },
+            "userName": "enterprises/LC01tmuh69/users/117159676628093862132",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/IaCFw9D0UKVQvhaVZ4qof84I02VmKEZQHlJ6cPjVnpQ",
+            "previousDeviceNames": [
+                "enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1",
+                "enterprises/LC01tmuh69/devices/347f3d0cbb2ec4b0"
+            ],
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/38a1cf974ea59ead",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T06:51:54.498Z",
+            "lastStatusReportTime": "2022-08-16T02:52:26.405Z",
+            "lastPolicySyncTime": "2022-08-16T05:36:24.976Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRB1F9ZGA",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7546355712",
+                "totalInternalStorage": "6343852032"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-16T01:49:43.343Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/108161629633676169941",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/39b2b517c8e46dfe",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-07-26T08:02:59.865Z",
+            "lastStatusReportTime": "2022-08-12T06:06:28.998Z",
+            "lastPolicySyncTime": "2022-08-12T06:06:34.202Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "qcom",
+                "deviceBasebandVersion": "S906EXXU1AVA7,S906EXXU1AVA7",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCT20EK1XK",
+                "model": "SM-S906E"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7574441984",
+                "totalInternalStorage": "5341437952"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-12T01:56:30.360Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/113430309148124237268",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/tK3bXTo2zIG6pc54OioP9h95JGXN5_KJMt9So-wkbhA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3adbc1877fabcbf1",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T06:58:20.618Z",
+            "lastStatusReportTime": "2022-08-16T06:57:43.099Z",
+            "lastPolicySyncTime": "2022-08-16T06:57:42.734Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRB1F9M7R",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7546351616",
+                "totalInternalStorage": "6343852032"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-15T07:06:54.729Z"
+                },
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-16T01:37:57.607Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/118013360777868914506",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3c4e006e43e9aaf3",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-03-14T02:15:30.210Z",
+            "lastStatusReportTime": "2022-08-16T03:15:21.103Z",
+            "lastPolicySyncTime": "2022-08-16T08:27:00.913Z",
+            "appliedPolicyVersion": "7",
+            "apiLevel": 30,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "ums9230_4h10",
+                "deviceBasebandVersion": "A035FXXU1AUL4,A035FXXU1AUL4",
+                "manufacturer": "samsung",
+                "serialNumber": "R9HRC0JRFXP",
+                "model": "SM-A035F"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+            "memoryInfo": {
+                "totalRam": "3728433152",
+                "totalInternalStorage": "3435470848"
+            },
+            "userName": "enterprises/LC01tmuh69/users/114728338067078064246",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/DirDW8zzKILwKi79461c5a3IHEfTgE4eNIKwTwrfTM4",
+            "previousDeviceNames": [
+                "enterprises/LC01tmuh69/devices/3d5f5c15732adceb",
+                "enterprises/LC01tmuh69/devices/37769a38d345e46b"
+            ],
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3c6580bcbf177ae9",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-05-09T08:02:38.451Z",
+            "lastStatusReportTime": "2022-08-10T09:11:13.771Z",
+            "lastPolicySyncTime": "2022-08-10T07:22:22.336Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU1ATLD,G996BXXU1ATLD",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCR10H1DWZ",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7537676288",
+                "totalInternalStorage": "6386028544"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-10T03:24:21.444Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/104793038497797124363",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3dcfa12b93e4db34",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "enrollmentTime": "2022-07-06T08:27:44.146Z",
+            "lastStatusReportTime": "2022-08-15T08:27:27.956Z",
+            "lastPolicySyncTime": "2022-08-16T04:49:45.285Z",
+            "appliedPolicyVersion": "21",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU5CVDD,G996BXXU5CVDD",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCR20QREMX",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
+            "memoryInfo": {
+                "totalRam": "7551062016",
+                "totalInternalStorage": "6463320064"
+            },
+            "userName": "enterprises/LC01tmuh69/users/112286006621536061852",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/Q1_IMgLFWVDJQed43kwEYVyDNcpserumQBPF15x3Bms",
+            "previousDeviceNames": [
+                "enterprises/LC01tmuh69/devices/3300600f4db8a285",
+                "enterprises/LC01tmuh69/devices/3b81288360028207"
+            ],
+            "user": {
+                "accountIdentifier": "CLV-DT00230-VN143440"
+            },
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        },
+        {
+            "name": "enterprises/LC01tmuh69/devices/3f45c6049f4734a0",
+            "managementMode": "DEVICE_OWNER",
+            "state": "ACTIVE",
+            "appliedState": "ACTIVE",
+            "policyCompliant": true,
+            "nonComplianceDetails": [
+                {
+                "settingName": "applications",
+                "nonComplianceReason": "APP_NOT_INSTALLED",
+                "packageName": "com.android.chrome",
+                "installationFailureReason": "IN_PROGRESS"
+                },
+                {
+                "settingName": "bluetoothContactSharingDisabled",
+                "nonComplianceReason": "MANAGEMENT_MODE"
+                }
+            ],
+            "enrollmentTime": "2022-04-15T04:51:35.873Z",
+            "lastStatusReportTime": "2022-08-11T02:43:38.724Z",
+            "lastPolicySyncTime": "2022-08-11T07:20:42.012Z",
+            "appliedPolicyVersion": "8",
+            "apiLevel": 31,
+            "hardwareInfo": {
+                "brand": "samsung",
+                "hardware": "exynos2100",
+                "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                "manufacturer": "samsung",
+                "serialNumber": "RFCRB1KLNWP",
+                "model": "SM-G996B"
+            },
+            "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "memoryInfo": {
+                "totalRam": "7546351616",
+                "totalInternalStorage": "6343852032"
+            },
+            "powerManagementEvents": [
+                {
+                "eventType": "BOOT_COMPLETED",
+                "createTime": "2022-08-11T02:43:35.141Z"
+                }
+            ],
+            "userName": "enterprises/LC01tmuh69/users/112345809194458278260",
+            "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/SocJQ5dD5HiebZr1gUjzAUAqd3KauaXf7d4x6U5v7u0",
+            "securityPosture": {
+                "devicePosture": "SECURE"
+            },
+            "ownership": "COMPANY_OWNED"
+        }
+    ]
+}
+      

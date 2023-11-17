@@ -1,0 +1,758 @@
+{
+    "result": {
+        "devices": [
+            {
+                "name": "enterprises/LC01tmuh69/devices/3054bdb134a3ae51",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T06:47:46.789Z",
+                "lastStatusReportTime": "2022-07-08T09:55:10.041Z",
+                "lastPolicySyncTime": "2022-07-08T09:55:06.509Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3AUIF,G996BXXU3AUIF",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRB13E3CE",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7536861184",
+                    "totalInternalStorage": "6214660096"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-07T04:10:06.845Z"
+                    },
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T01:48:05.787Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/113050379211361630496",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/30967dcf84ac1423",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-05-09T08:19:10.227Z",
+                "lastStatusReportTime": "2022-07-09T01:50:36.456Z",
+                "lastPolicySyncTime": "2022-07-09T01:50:55.105Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3BUKG,G996BXXU3BUKG",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCT103G1HW",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7546355712",
+                    "totalInternalStorage": "6326407168"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T08:38:09.687Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/111205294643957189582",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3274585a73d9f2ed",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T06:45:22.689Z",
+                "lastStatusReportTime": "2022-07-08T08:37:08.150Z",
+                "lastPolicySyncTime": "2022-07-08T08:37:24.848Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRB13X0PA",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7546355712",
+                    "totalInternalStorage": "6343852032"
+                },
+                "userName": "enterprises/LC01tmuh69/users/110340894274459228822",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/331883bbacce2354",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T06:50:18.431Z",
+                "lastStatusReportTime": "2022-07-09T11:00:39.276Z",
+                "lastPolicySyncTime": "2022-07-09T11:01:06.468Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3AUIF,G996BXXU3AUIF",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRA1ESZGE",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7536852992",
+                    "totalInternalStorage": "6214660096"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T08:48:21.260Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/115672791639831471739",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/33357f56028ccc93",
+                "managementMode": "PROFILE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "privateKeySelectionEnabled",
+                        "nonComplianceReason": "API_LEVEL"
+                    },
+                    {
+                        "settingName": "advancedSecurityOverrides",
+                        "nonComplianceReason": "API_LEVEL",
+                        "fieldPath": "advancedSecurityOverrides.developerSettings"
+                    },
+                    {
+                        "settingName": "usbFileTransferDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "frpAdminIds",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "API_LEVEL"
+                    },
+                    {
+                        "settingName": "smsDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "mobileNetworksConfigDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "mountPhysicalMediaDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "bluetoothDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    },
+                    {
+                        "settingName": "addUserDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-03-17T10:05:18.328Z",
+                "lastStatusReportTime": "2022-03-30T04:38:16.952Z",
+                "lastPolicySyncTime": "2022-03-30T04:45:13.559Z",
+                "appliedPolicyVersion": "4",
+                "apiLevel": 22,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "sc8830",
+                    "deviceBasebandVersion": "T285XXU0API1",
+                    "manufacturer": "samsung",
+                    "serialNumber": "52005b4347a42600",
+                    "model": "SM-T285"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+                "memoryInfo": {
+                    "totalRam": "1485701120",
+                    "totalInternalStorage": "2080194560"
+                },
+                "userName": "enterprises/LC01tmuh69/users/110358350248148484732",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/pMXU265RpaghjIY0AlMAnoAuQCUBrbZcGVP62QxhOLk",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "PERSONALLY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/33e93329077b1bd6",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-05-09T08:13:42.829Z",
+                "lastStatusReportTime": "2022-07-09T05:45:25.822Z",
+                "lastPolicySyncTime": "2022-07-09T11:46:07.916Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU1ATLD,G996BXXU1ATLD",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCR10H1G4X",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7537676288",
+                    "totalInternalStorage": "6386028544"
+                },
+                "userName": "enterprises/LC01tmuh69/users/115157899955874530212",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/347f3d0cbb2ec4b0",
+                "managementMode": "DEVICE_OWNER",
+                "state": "PROVISIONING",
+                "enrollmentTime": "2022-06-28T08:19:52.143Z",
+                "lastPolicySyncTime": "2022-06-28T08:23:39.117Z",
+                "softwareInfo": {
+                    "androidVersion": "11",
+                    "androidDevicePolicyVersionCode": 1665720,
+                    "androidDevicePolicyVersionName": "62.39.5 (1665720)",
+                    "androidBuildNumber": "RP1A.200720.012.X205XXU1AVA7",
+                    "deviceKernelVersion": "4.14.199-23332279-abX205XXU1AVA7",
+                    "bootloaderVersion": "X205XXU1AVA7",
+                    "androidBuildTime": "2022-01-14T04:59:34Z",
+                    "securityPatchLevel": "2022-01-01",
+                    "primaryLanguageCode": "en-GB",
+                    "deviceBuildSignature": "34df0e7a9f1cf1892e45c056b4973cd81ccf148a4050d11aea4ac5a65f900a42",
+                    "systemUpdateInfo": {
+                        "updateStatus": "UP_TO_DATE"
+                    }
+                },
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "ums512_1h10",
+                    "deviceBasebandVersion": "X205XXU1AVA7",
+                    "manufacturer": "samsung",
+                    "serialNumber": "R9PT20JHWEF",
+                    "model": "SM-X205"
+                },
+                "memoryInfo": {
+                    "totalRam": "3683807232",
+                    "totalInternalStorage": "3488788480"
+                },
+                "userName": "enterprises/LC01tmuh69/users/118262803682398395021",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/zB4cfDicbvLvfS2hYX5OJuzj-iZTN3B4fRhrMrKWKo4",
+                "previousDeviceNames": [
+                    "enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1"
+                ],
+                "securityPosture": {},
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/368e5438f4467d01",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-03-14T03:19:32.003Z",
+                "lastStatusReportTime": "2022-07-09T05:00:35.819Z",
+                "lastPolicySyncTime": "2022-07-09T10:55:07.951Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 30,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "ums9230_4h10",
+                    "deviceBasebandVersion": "A035FXXU1AUL4,A035FXXU1AUL4",
+                    "manufacturer": "samsung",
+                    "serialNumber": "R9HRC0JPD4A",
+                    "model": "SM-A035F"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+                "memoryInfo": {
+                    "totalRam": "3728433152",
+                    "totalInternalStorage": "3435470848"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T01:06:09.954Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/102126373801451531309",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/MFzTNH-1B_JtV1BXshl-mfc2fQ4pI_WhitxkrPuh_gU",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/37cf5e9f7ddebd24",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "enrollmentTime": "2022-06-28T08:30:43.034Z",
+                "lastStatusReportTime": "2022-07-08T06:36:24.807Z",
+                "lastPolicySyncTime": "2022-07-08T10:46:36.113Z",
+                "appliedPolicyVersion": "6",
+                "apiLevel": 30,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "ums512_1h10",
+                    "deviceBasebandVersion": "X205XXU1AVA7",
+                    "manufacturer": "samsung",
+                    "serialNumber": "R9PT20JHWEF",
+                    "model": "SM-X205"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
+                "memoryInfo": {
+                    "totalRam": "3683807232",
+                    "totalInternalStorage": "3488788480"
+                },
+                "userName": "enterprises/LC01tmuh69/users/117159676628093862132",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/IaCFw9D0UKVQvhaVZ4qof84I02VmKEZQHlJ6cPjVnpQ",
+                "previousDeviceNames": [
+                    "enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1",
+                    "enterprises/LC01tmuh69/devices/347f3d0cbb2ec4b0"
+                ],
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/38a1cf974ea59ead",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T06:51:54.498Z",
+                "lastStatusReportTime": "2022-07-06T16:38:26.105Z",
+                "lastPolicySyncTime": "2022-07-08T01:24:20.974Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRB1F9ZGA",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7546355712",
+                    "totalInternalStorage": "6343852032"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-06T03:22:12.376Z"
+                    },
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-06T06:58:59.756Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/108161629633676169941",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3adbc1877fabcbf1",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T06:58:20.618Z",
+                "lastStatusReportTime": "2022-07-08T08:29:47.597Z",
+                "lastPolicySyncTime": "2022-07-08T08:42:10.904Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRB1F9M7R",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7546351616",
+                    "totalInternalStorage": "6343852032"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T04:08:50.245Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/118013360777868914506",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1",
+                "managementMode": "DEVICE_OWNER",
+                "state": "PROVISIONING",
+                "enrollmentTime": "2022-06-28T07:54:08.809Z",
+                "lastPolicySyncTime": "2022-06-28T08:07:01.882Z",
+                "softwareInfo": {
+                    "androidVersion": "11",
+                    "androidDevicePolicyVersionCode": 1665720,
+                    "androidDevicePolicyVersionName": "62.39.5 (1665720)",
+                    "androidBuildNumber": "RP1A.200720.012.X205XXU1AVA7",
+                    "deviceKernelVersion": "4.14.199-23332279-abX205XXU1AVA7",
+                    "bootloaderVersion": "X205XXU1AVA7",
+                    "androidBuildTime": "2022-01-14T04:59:34Z",
+                    "securityPatchLevel": "2022-01-01",
+                    "primaryLanguageCode": "vi-VN",
+                    "deviceBuildSignature": "34df0e7a9f1cf1892e45c056b4973cd81ccf148a4050d11aea4ac5a65f900a42",
+                    "systemUpdateInfo": {
+                        "updateStatus": "UP_TO_DATE"
+                    }
+                },
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "ums512_1h10",
+                    "deviceBasebandVersion": "X205XXU1AVA7",
+                    "manufacturer": "samsung",
+                    "serialNumber": "R9PT20JHWEF",
+                    "model": "SM-X205"
+                },
+                "memoryInfo": {
+                    "totalRam": "3683807232",
+                    "totalInternalStorage": "3488788480"
+                },
+                "userName": "enterprises/LC01tmuh69/users/101303923214358495802",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/zB4cfDicbvLvfS2hYX5OJuzj-iZTN3B4fRhrMrKWKo4",
+                "securityPosture": {},
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3c4e006e43e9aaf3",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-03-14T02:15:30.210Z",
+                "lastStatusReportTime": "2022-07-09T02:59:28.415Z",
+                "lastPolicySyncTime": "2022-07-09T11:02:37.251Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 30,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "ums9230_4h10",
+                    "deviceBasebandVersion": "A035FXXU1AUL4,A035FXXU1AUL4",
+                    "manufacturer": "samsung",
+                    "serialNumber": "R9HRC0JRFXP",
+                    "model": "SM-A035F"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
+                "memoryInfo": {
+                    "totalRam": "3728433152",
+                    "totalInternalStorage": "3435470848"
+                },
+                "userName": "enterprises/LC01tmuh69/users/114728338067078064246",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/DirDW8zzKILwKi79461c5a3IHEfTgE4eNIKwTwrfTM4",
+                "previousDeviceNames": [
+                    "enterprises/LC01tmuh69/devices/3d5f5c15732adceb",
+                    "enterprises/LC01tmuh69/devices/37769a38d345e46b"
+                ],
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3c6580bcbf177ae9",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-05-09T08:02:38.451Z",
+                "lastStatusReportTime": "2022-07-08T08:18:50.066Z",
+                "lastPolicySyncTime": "2022-07-08T08:18:22.177Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU1ATLD,G996BXXU1ATLD",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCR10H1DWZ",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7537676288",
+                    "totalInternalStorage": "6386028544"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T04:04:00.454Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/104793038497797124363",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3dcfa12b93e4db34",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "enrollmentTime": "2022-07-06T08:27:44.146Z",
+                "lastStatusReportTime": "2022-07-09T08:52:06.604Z",
+                "lastPolicySyncTime": "2022-07-09T08:52:12.625Z",
+                "appliedPolicyVersion": "14",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU5CVDD,G996BXXU5CVDD",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCR20QREMX",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
+                "memoryInfo": {
+                    "totalRam": "7551062016",
+                    "totalInternalStorage": "6463320064"
+                },
+                "powerManagementEvents": [
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T09:12:26.186Z"
+                    },
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T09:33:59.794Z"
+                    },
+                    {
+                        "eventType": "BOOT_COMPLETED",
+                        "createTime": "2022-07-08T09:42:08.439Z"
+                    }
+                ],
+                "userName": "enterprises/LC01tmuh69/users/112286006621536061852",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/Q1_IMgLFWVDJQed43kwEYVyDNcpserumQBPF15x3Bms",
+                "previousDeviceNames": [
+                    "enterprises/LC01tmuh69/devices/3300600f4db8a285",
+                    "enterprises/LC01tmuh69/devices/3b81288360028207"
+                ],
+                "user": {
+                    "accountIdentifier": "CLV-DT00230-VN143440"
+                },
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            },
+            {
+                "name": "enterprises/LC01tmuh69/devices/3f45c6049f4734a0",
+                "managementMode": "DEVICE_OWNER",
+                "state": "ACTIVE",
+                "appliedState": "ACTIVE",
+                "policyCompliant": true,
+                "nonComplianceDetails": [
+                    {
+                        "settingName": "applications",
+                        "nonComplianceReason": "APP_INSTALLED",
+                        "packageName": "com.google.android.googlequicksearchbox"
+                    },
+                    {
+                        "settingName": "applications",
+                        "nonComplianceReason": "APP_INSTALLED",
+                        "packageName": "com.samsung.android.app.contacts"
+                    },
+                    {
+                        "settingName": "applications",
+                        "nonComplianceReason": "APP_INSTALLED",
+                        "packageName": "com.samsung.android.messaging"
+                    },
+                    {
+                        "settingName": "applications",
+                        "nonComplianceReason": "APP_INSTALLED",
+                        "packageName": "com.samsung.android.dialer"
+                    },
+                    {
+                        "settingName": "applications",
+                        "nonComplianceReason": "APP_INSTALLED",
+                        "packageName": "com.sec.android.app.myfiles"
+                    },
+                    {
+                        "settingName": "bluetoothContactSharingDisabled",
+                        "nonComplianceReason": "MANAGEMENT_MODE"
+                    }
+                ],
+                "enrollmentTime": "2022-04-15T04:51:35.873Z",
+                "lastStatusReportTime": "2022-06-23T08:26:19.313Z",
+                "lastPolicySyncTime": "2022-07-08T08:36:23.016Z",
+                "appliedPolicyVersion": "7",
+                "apiLevel": 31,
+                "hardwareInfo": {
+                    "brand": "samsung",
+                    "hardware": "exynos2100",
+                    "deviceBasebandVersion": "G996BXXU3BUK8,G996BXXU3BUK8",
+                    "manufacturer": "samsung",
+                    "serialNumber": "RFCRB1KLNWP",
+                    "model": "SM-G996B"
+                },
+                "policyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "appliedPolicyName": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+                "memoryInfo": {
+                    "totalRam": "7546351616",
+                    "totalInternalStorage": "6343852032"
+                },
+                "userName": "enterprises/LC01tmuh69/users/112345809194458278260",
+                "enrollmentTokenName": "enterprises/LC01tmuh69/enrollmentTokens/SocJQ5dD5HiebZr1gUjzAUAqd3KauaXf7d4x6U5v7u0",
+                "securityPosture": {
+                    "devicePosture": "SECURE"
+                },
+                "ownership": "COMPANY_OWNED"
+            }
+        ]
+    },
+    "body": "{\n  \"devices\": [\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3054bdb134a3ae51\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T06:47:46.789Z\",\n      \"lastStatusReportTime\": \"2022-07-08T09:55:10.041Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T09:55:06.509Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3AUIF,G996BXXU3AUIF\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRB13E3CE\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7536861184\",\n        \"totalInternalStorage\": \"6214660096\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-07T04:10:06.845Z\"\n        },\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T01:48:05.787Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/113050379211361630496\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/30967dcf84ac1423\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-05-09T08:19:10.227Z\",\n      \"lastStatusReportTime\": \"2022-07-09T01:50:36.456Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T01:50:55.105Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3BUKG,G996BXXU3BUKG\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCT103G1HW\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7546355712\",\n        \"totalInternalStorage\": \"6326407168\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T08:38:09.687Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/111205294643957189582\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3274585a73d9f2ed\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T06:45:22.689Z\",\n      \"lastStatusReportTime\": \"2022-07-08T08:37:08.150Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T08:37:24.848Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3BUK8,G996BXXU3BUK8\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRB13X0PA\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7546355712\",\n        \"totalInternalStorage\": \"6343852032\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/110340894274459228822\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/331883bbacce2354\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T06:50:18.431Z\",\n      \"lastStatusReportTime\": \"2022-07-09T11:00:39.276Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T11:01:06.468Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3AUIF,G996BXXU3AUIF\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRA1ESZGE\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7536852992\",\n        \"totalInternalStorage\": \"6214660096\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T08:48:21.260Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/115672791639831471739\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/33357f56028ccc93\",\n      \"managementMode\": \"PROFILE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"privateKeySelectionEnabled\",\n          \"nonComplianceReason\": \"API_LEVEL\"\n        },\n        {\n          \"settingName\": \"advancedSecurityOverrides\",\n          \"nonComplianceReason\": \"API_LEVEL\",\n          \"fieldPath\": \"advancedSecurityOverrides.developerSettings\"\n        },\n        {\n          \"settingName\": \"usbFileTransferDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"frpAdminIds\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"API_LEVEL\"\n        },\n        {\n          \"settingName\": \"smsDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"mobileNetworksConfigDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"mountPhysicalMediaDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"bluetoothDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        },\n        {\n          \"settingName\": \"addUserDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-03-17T10:05:18.328Z\",\n      \"lastStatusReportTime\": \"2022-03-30T04:38:16.952Z\",\n      \"lastPolicySyncTime\": \"2022-03-30T04:45:13.559Z\",\n      \"appliedPolicyVersion\": \"4\",\n      \"apiLevel\": 22,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"sc8830\",\n        \"deviceBasebandVersion\": \"T285XXU0API1\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"52005b4347a42600\",\n        \"model\": \"SM-T285\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016\",\n      \"memoryInfo\": {\n        \"totalRam\": \"1485701120\",\n        \"totalInternalStorage\": \"2080194560\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/110358350248148484732\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/pMXU265RpaghjIY0AlMAnoAuQCUBrbZcGVP62QxhOLk\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"PERSONALLY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/33e93329077b1bd6\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-05-09T08:13:42.829Z\",\n      \"lastStatusReportTime\": \"2022-07-09T05:45:25.822Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T11:46:07.916Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU1ATLD,G996BXXU1ATLD\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCR10H1G4X\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7537676288\",\n        \"totalInternalStorage\": \"6386028544\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/115157899955874530212\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/347f3d0cbb2ec4b0\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"PROVISIONING\",\n      \"enrollmentTime\": \"2022-06-28T08:19:52.143Z\",\n      \"lastPolicySyncTime\": \"2022-06-28T08:23:39.117Z\",\n      \"softwareInfo\": {\n        \"androidVersion\": \"11\",\n        \"androidDevicePolicyVersionCode\": 1665720,\n        \"androidDevicePolicyVersionName\": \"62.39.5 (1665720)\",\n        \"androidBuildNumber\": \"RP1A.200720.012.X205XXU1AVA7\",\n        \"deviceKernelVersion\": \"4.14.199-23332279-abX205XXU1AVA7\",\n        \"bootloaderVersion\": \"X205XXU1AVA7\",\n        \"androidBuildTime\": \"2022-01-14T04:59:34Z\",\n        \"securityPatchLevel\": \"2022-01-01\",\n        \"primaryLanguageCode\": \"en-GB\",\n        \"deviceBuildSignature\": \"34df0e7a9f1cf1892e45c056b4973cd81ccf148a4050d11aea4ac5a65f900a42\",\n        \"systemUpdateInfo\": {\n          \"updateStatus\": \"UP_TO_DATE\"\n        }\n      },\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"ums512_1h10\",\n        \"deviceBasebandVersion\": \"X205XXU1AVA7\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"R9PT20JHWEF\",\n        \"model\": \"SM-X205\"\n      },\n      \"memoryInfo\": {\n        \"totalRam\": \"3683807232\",\n        \"totalInternalStorage\": \"3488788480\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/118262803682398395021\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/zB4cfDicbvLvfS2hYX5OJuzj-iZTN3B4fRhrMrKWKo4\",\n      \"previousDeviceNames\": [\n        \"enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1\"\n      ],\n      \"securityPosture\": {},\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/368e5438f4467d01\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-03-14T03:19:32.003Z\",\n      \"lastStatusReportTime\": \"2022-07-09T05:00:35.819Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T10:55:07.951Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 30,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"ums9230_4h10\",\n        \"deviceBasebandVersion\": \"A035FXXU1AUL4,A035FXXU1AUL4\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"R9HRC0JPD4A\",\n        \"model\": \"SM-A035F\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord\",\n      \"memoryInfo\": {\n        \"totalRam\": \"3728433152\",\n        \"totalInternalStorage\": \"3435470848\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T01:06:09.954Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/102126373801451531309\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/MFzTNH-1B_JtV1BXshl-mfc2fQ4pI_WhitxkrPuh_gU\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/37cf5e9f7ddebd24\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"enrollmentTime\": \"2022-06-28T08:30:43.034Z\",\n      \"lastStatusReportTime\": \"2022-07-08T06:36:24.807Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T10:46:36.113Z\",\n      \"appliedPolicyVersion\": \"6\",\n      \"apiLevel\": 30,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"ums512_1h10\",\n        \"deviceBasebandVersion\": \"X205XXU1AVA7\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"R9PT20JHWEF\",\n        \"model\": \"SM-X205\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom\",\n      \"memoryInfo\": {\n        \"totalRam\": \"3683807232\",\n        \"totalInternalStorage\": \"3488788480\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/117159676628093862132\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/IaCFw9D0UKVQvhaVZ4qof84I02VmKEZQHlJ6cPjVnpQ\",\n      \"previousDeviceNames\": [\n        \"enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1\",\n        \"enterprises/LC01tmuh69/devices/347f3d0cbb2ec4b0\"\n      ],\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/38a1cf974ea59ead\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T06:51:54.498Z\",\n      \"lastStatusReportTime\": \"2022-07-06T16:38:26.105Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T01:24:20.974Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3BUK8,G996BXXU3BUK8\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRB1F9ZGA\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7546355712\",\n        \"totalInternalStorage\": \"6343852032\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-06T03:22:12.376Z\"\n        },\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-06T06:58:59.756Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/108161629633676169941\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3adbc1877fabcbf1\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T06:58:20.618Z\",\n      \"lastStatusReportTime\": \"2022-07-08T08:29:47.597Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T08:42:10.904Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3BUK8,G996BXXU3BUK8\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRB1F9M7R\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7546351616\",\n        \"totalInternalStorage\": \"6343852032\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T04:08:50.245Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/118013360777868914506\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/gWoe-jPfm6kErqhtrQDGa_kC-5k7sFi7cXuIVtZEJEA\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3c4cd62ffed13ea1\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"PROVISIONING\",\n      \"enrollmentTime\": \"2022-06-28T07:54:08.809Z\",\n      \"lastPolicySyncTime\": \"2022-06-28T08:07:01.882Z\",\n      \"softwareInfo\": {\n        \"androidVersion\": \"11\",\n        \"androidDevicePolicyVersionCode\": 1665720,\n        \"androidDevicePolicyVersionName\": \"62.39.5 (1665720)\",\n        \"androidBuildNumber\": \"RP1A.200720.012.X205XXU1AVA7\",\n        \"deviceKernelVersion\": \"4.14.199-23332279-abX205XXU1AVA7\",\n        \"bootloaderVersion\": \"X205XXU1AVA7\",\n        \"androidBuildTime\": \"2022-01-14T04:59:34Z\",\n        \"securityPatchLevel\": \"2022-01-01\",\n        \"primaryLanguageCode\": \"vi-VN\",\n        \"deviceBuildSignature\": \"34df0e7a9f1cf1892e45c056b4973cd81ccf148a4050d11aea4ac5a65f900a42\",\n        \"systemUpdateInfo\": {\n          \"updateStatus\": \"UP_TO_DATE\"\n        }\n      },\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"ums512_1h10\",\n        \"deviceBasebandVersion\": \"X205XXU1AVA7\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"R9PT20JHWEF\",\n        \"model\": \"SM-X205\"\n      },\n      \"memoryInfo\": {\n        \"totalRam\": \"3683807232\",\n        \"totalInternalStorage\": \"3488788480\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/101303923214358495802\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/zB4cfDicbvLvfS2hYX5OJuzj-iZTN3B4fRhrMrKWKo4\",\n      \"securityPosture\": {},\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3c4e006e43e9aaf3\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-03-14T02:15:30.210Z\",\n      \"lastStatusReportTime\": \"2022-07-09T02:59:28.415Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T11:02:37.251Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 30,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"ums9230_4h10\",\n        \"deviceBasebandVersion\": \"A035FXXU1AUL4,A035FXXU1AUL4\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"R9HRC0JRFXP\",\n        \"model\": \"SM-A035F\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord\",\n      \"memoryInfo\": {\n        \"totalRam\": \"3728433152\",\n        \"totalInternalStorage\": \"3435470848\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/114728338067078064246\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/DirDW8zzKILwKi79461c5a3IHEfTgE4eNIKwTwrfTM4\",\n      \"previousDeviceNames\": [\n        \"enterprises/LC01tmuh69/devices/3d5f5c15732adceb\",\n        \"enterprises/LC01tmuh69/devices/37769a38d345e46b\"\n      ],\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3c6580bcbf177ae9\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-05-09T08:02:38.451Z\",\n      \"lastStatusReportTime\": \"2022-07-08T08:18:50.066Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T08:18:22.177Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU1ATLD,G996BXXU1ATLD\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCR10H1DWZ\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7537676288\",\n        \"totalInternalStorage\": \"6386028544\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T04:04:00.454Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/104793038497797124363\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/_POg3Paa16YkMzIXJEJqkTaUEwj4qVXbvBDUAa07wAI\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3dcfa12b93e4db34\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"enrollmentTime\": \"2022-07-06T08:27:44.146Z\",\n      \"lastStatusReportTime\": \"2022-07-09T08:52:06.604Z\",\n      \"lastPolicySyncTime\": \"2022-07-09T08:52:12.625Z\",\n      \"appliedPolicyVersion\": \"14\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU5CVDD,G996BXXU5CVDD\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCR20QREMX\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7551062016\",\n        \"totalInternalStorage\": \"6463320064\"\n      },\n      \"powerManagementEvents\": [\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T09:12:26.186Z\"\n        },\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T09:33:59.794Z\"\n        },\n        {\n          \"eventType\": \"BOOT_COMPLETED\",\n          \"createTime\": \"2022-07-08T09:42:08.439Z\"\n        }\n      ],\n      \"userName\": \"enterprises/LC01tmuh69/users/112286006621536061852\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/Q1_IMgLFWVDJQed43kwEYVyDNcpserumQBPF15x3Bms\",\n      \"previousDeviceNames\": [\n        \"enterprises/LC01tmuh69/devices/3300600f4db8a285\",\n        \"enterprises/LC01tmuh69/devices/3b81288360028207\"\n      ],\n      \"user\": {\n        \"accountIdentifier\": \"CLV-DT00230-VN143440\"\n      },\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/devices/3f45c6049f4734a0\",\n      \"managementMode\": \"DEVICE_OWNER\",\n      \"state\": \"ACTIVE\",\n      \"appliedState\": \"ACTIVE\",\n      \"policyCompliant\": true,\n      \"nonComplianceDetails\": [\n        {\n          \"settingName\": \"applications\",\n          \"nonComplianceReason\": \"APP_INSTALLED\",\n          \"packageName\": \"com.google.android.googlequicksearchbox\"\n        },\n        {\n          \"settingName\": \"applications\",\n          \"nonComplianceReason\": \"APP_INSTALLED\",\n          \"packageName\": \"com.samsung.android.app.contacts\"\n        },\n        {\n          \"settingName\": \"applications\",\n          \"nonComplianceReason\": \"APP_INSTALLED\",\n          \"packageName\": \"com.samsung.android.messaging\"\n        },\n        {\n          \"settingName\": \"applications\",\n          \"nonComplianceReason\": \"APP_INSTALLED\",\n          \"packageName\": \"com.samsung.android.dialer\"\n        },\n        {\n          \"settingName\": \"applications\",\n          \"nonComplianceReason\": \"APP_INSTALLED\",\n          \"packageName\": \"com.sec.android.app.myfiles\"\n        },\n        {\n          \"settingName\": \"bluetoothContactSharingDisabled\",\n          \"nonComplianceReason\": \"MANAGEMENT_MODE\"\n        }\n      ],\n      \"enrollmentTime\": \"2022-04-15T04:51:35.873Z\",\n      \"lastStatusReportTime\": \"2022-06-23T08:26:19.313Z\",\n      \"lastPolicySyncTime\": \"2022-07-08T08:36:23.016Z\",\n      \"appliedPolicyVersion\": \"7\",\n      \"apiLevel\": 31,\n      \"hardwareInfo\": {\n        \"brand\": \"samsung\",\n        \"hardware\": \"exynos2100\",\n        \"deviceBasebandVersion\": \"G996BXXU3BUK8,G996BXXU3BUK8\",\n        \"manufacturer\": \"samsung\",\n        \"serialNumber\": \"RFCRB1KLNWP\",\n        \"model\": \"SM-G996B\"\n      },\n      \"policyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"appliedPolicyName\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"memoryInfo\": {\n        \"totalRam\": \"7546351616\",\n        \"totalInternalStorage\": \"6343852032\"\n      },\n      \"userName\": \"enterprises/LC01tmuh69/users/112345809194458278260\",\n      \"enrollmentTokenName\": \"enterprises/LC01tmuh69/enrollmentTokens/SocJQ5dD5HiebZr1gUjzAUAqd3KauaXf7d4x6U5v7u0\",\n      \"securityPosture\": {\n        \"devicePosture\": \"SECURE\"\n      },\n      \"ownership\": \"COMPANY_OWNED\"\n    }\n  ]\n}\n",
+    "headers": {
+        "cache-control": "private",
+        "content-encoding": "gzip",
+        "content-length": "3406",
+        "content-type": "application/json; charset=UTF-8",
+        "date": "Sat, 09 Jul 2022 14:22:47 GMT",
+        "server": "ESF",
+        "vary": "Origin, X-Origin, Referer"
+    },
+    "status": 200,
+    "statusText": null
+}
