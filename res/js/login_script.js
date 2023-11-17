@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
 			}
 		],
 		// Terms of service url.
-		tosUrl: '/login.html'
+		tosUrl: '/index.html'
     };
 
 	const user = auth.currentUser;
