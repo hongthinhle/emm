@@ -8,8 +8,8 @@ window.addEventListener('load', function () {
 				provider: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
 				disableSignUp: {
 					status: true,
-					adminEmail: "hongthinh.le@chingluh.com",
-					helpLink: "https://chingluhgroup-emm.web.app/help.html"}
+					adminEmail: "hongthinh.emm@gmail.com",
+					helpLink: "./help.html"}
 			}
 		],
 		// Terms of service url.
