@@ -1,9 +1,38 @@
 {
-    "policies": [
+    "dialog": {
+        "policies": {
+            "application_add_permission": {
+                "id": "emm-policies-application-permission-add",
+                "class": "",
+                "title": "<i class='fa-duotone fa-shield-plus' style='font-size: 22px;'></i> Application | Add Permission",
+                "body": "<div class='input-group mt-3'>\n    <span class='input-group-text w-105px'>Permission:</span>\n    <select class='form-control %id%-select2 s2-100pe-105px s2-title' id='%id%-permission'>\n        <option value='android.permission.CAMERA'>CAMERA</option>\n        <option value='android.permission.READ_EXTERNAL_STORAGE'>READ_EXTERNAL_STORAGE</option>\n        <option value='android.permission.WRITE_EXTERNAL_STORAGE'>WRITE_EXTERNAL_STORAGE</option>\n    </select>\n    </div><div class='input-group mt-3'>\n    <span class='input-group-text w-105px'>Policy:</span>\n    <select class='form-control %id%-select2 s2-80pe-105px' id='%id%-policy'>\n        <option value='PROMPT'>PROMPT</option>\n        <option value='GRANT'>GRANT</option>\n        <option value='DENY' selected>DENY</option>\n    </select>\n    <button type='button' class='btn btn-outline-primary dialog-submit w-20pe'><i class='fa-solid fa-paper-plane'></i> Submit</button>\n</div>",
+                "config": {
+                    "autoOpen": true, "draggable": true, "resizable": false, 
+                    "modal": true, "height": 180, "width": 800
+                }
+            },
+            "application_add_new": {
+                "id": "emm-policies-application-add-new",
+                "class": "",
+                "title": "<i class='fa-duotone fa-shield-plus' style='font-size: 22px;'></i> Application | Add Permission",
+                "body": "<div class='input-group mt-2'>\n    <span class='input-group-text w-130px'>Application_ID:</span>\n    <input type='text' class='form-control' placeholder='Application_ID' aria-label='' id='%id%-application-id'><button type='button' class='btn btn-outline-primary dialog-submit w-20pe'><i class='fa-solid fa-paper-plane'></i> Submit</button>\n</div>",
+                "config": {
+                    "autoOpen": true, "draggable": true, "resizable": false,
+                    "modal": true, "height": 130, "width": 800
+                }
+            }
+        }
+    },
+    "policies": 
+    [
         {
             "name": "enterprises/LC01tmuh69/policies/clg-pcc-cellphone-smj260g",
-            "version": "2",
+            "version": "8",
             "applications": [
+                {
+                    "packageName": "com.google.android.apps.searchlite",
+                    "installType": "BLOCKED"
+                },
                 {
                     "packageName": "com.google.android.googlequicksearchbox",
                     "installType": "BLOCKED"
@@ -33,55 +62,7 @@
                     "installType": "BLOCKED"
                 },
                 {
-                    "packageName": "com.android.chrome",
-                    "installType": "FORCE_INSTALLED"
-                },
-                {
-                    "packageName": "com.google.android.apps.docs",
-                    "installType": "BLOCKED"
-                }
-            ],
-            "frpAdminEmails": [
-                "pccinfo.chingluh@gmail.com"
-            ],
-            "advancedSecurityOverrides": {
-                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-            }
-        },
-        {
-            "name": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
-            "version": "4",
-            "applications": [
-                {
-                    "packageName": "com.google.android.googlequicksearchbox",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.google.android.gm",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.samsung.android.app.contacts",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.samsung.android.messaging",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.samsung.android.dialer",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.sec.android.app.myfiles",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.sec.android.app.camera",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.android.chrome",
+                    "packageName": "com.zing.zalo",
                     "installType": "FORCE_INSTALLED"
                 },
                 {
@@ -91,22 +72,93 @@
             ],
             "screenCaptureDisabled": true,
             "addUserDisabled": true,
-            "mountPhysicalMediaDisabled": true,
+            "factoryResetDisabled": true,
             "bluetoothContactSharingDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
             "passwordRequirements": {
                 "passwordMinimumLength": 6,
                 "passwordQuality": "ALPHABETIC"
             },
             "bluetoothConfigDisabled": true,
-            "mobileNetworksConfigDisabled": true,
-            "outgoingBeamDisabled": true,
-            "smsDisabled": true,
             "usbFileTransferDisabled": true,
             "frpAdminEmails": [
                 "pccinfo.chingluh@gmail.com"
             ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
             "bluetoothDisabled": true,
-            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
+            "version": "5",
+            "applications": [
+                {
+                    "packageName": "com.google.android.apps.searchlite",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "addUserDisabled": true,
+            "factoryResetDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "bluetoothDisabled": true,
             "advancedSecurityOverrides": {
                 "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
             }
@@ -189,160 +241,7 @@
         },
         {
             "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
-            "version": "21",
-            "applications": [
-                {
-                    "packageName": "com.google.android.googlequicksearchbox",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.google.android.gm",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.sec.android.app.clockpackage",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.google.android.apps.messaging",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.sec.android.gallery3d",
-                    "installType": "FORCE_INSTALLED"
-                },
-                {
-                    "packageName": "com.samsung.android.app.contacts",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.samsung.android.messaging",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.samsung.android.dialer",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.sec.android.app.myfiles",
-                    "installType": "FORCE_INSTALLED"
-                },
-                {
-                    "packageName": "com.sec.android.app.camera",
-                    "installType": "FORCE_INSTALLED"
-                },
-                {
-                    "packageName": "com.android.chrome",
-                    "installType": "FORCE_INSTALLED"
-                },
-                {
-                    "packageName": "com.google.android.youtube",
-                    "installType": "AVAILABLE"
-                },
-                {
-                    "packageName": "com.google.android.apps.docs",
-                    "installType": "BLOCKED"
-                },
-                {
-                    "packageName": "com.zing.zalo",
-                    "installType": "FORCE_INSTALLED",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "DENY"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.takesampleimage",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "GRANT"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.takeprofilepicture",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "DENY"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.cameraconnect",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "GRANT"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.assetmanagement",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "GRANT"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.approveddocuments",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT",
-                    "permissionGrants": [
-                        {
-                            "permission": "android.permission.CAMERA",
-                            "policy": "GRANT"
-                        }
-                    ]
-                },
-                {
-                    "packageName": "chingluhgroup.ecosystem.emmsolution",
-                    "installType": "AVAILABLE",
-                    "defaultPermissionPolicy": "GRANT"
-                }
-            ],
-            "factoryResetDisabled": true,
-            "shortSupportMessage": {
-                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
-            },
-            "passwordRequirements": {
-                "passwordMinimumLength": 6,
-                "passwordQuality": "ALPHABETIC"
-            },
-            "cellBroadcastsConfigDisabled": true,
-            "mobileNetworksConfigDisabled": true,
-            "tetheringConfigDisabled": true,
-            "outgoingBeamDisabled": true,
-            "outgoingCallsDisabled": true,
-            "smsDisabled": true,
-            "frpAdminEmails": [
-                "pccinfo.chingluh@gmail.com"
-            ],
-            "deviceOwnerLockScreenInfo": {
-                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
-            },
-            "locationMode": "LOCATION_ENFORCED",
-            "advancedSecurityOverrides": {
-                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-            }
-        },
-        {
-            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
-            "version": "8",
+            "version": "28",
             "applications": [
                 {
                     "packageName": "com.google.android.googlequicksearchbox",
@@ -400,8 +299,7 @@
                             "*"
                         ],
                         "URLAllowlist": [
-                            "pccinfo.chingluh.com.vn",
-                            "172.16.16.70"
+                            "*"
                         ],
                         "Recommended": [
                             "pccinfo.chingluh.com.vn"
@@ -412,7 +310,7 @@
                     }
                 },
                 {
-                    "packageName": "chingluhgroup.ecosystem.takesampleimage",
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
                     "installType": "AVAILABLE",
                     "defaultPermissionPolicy": "GRANT",
                     "permissionGrants": [
@@ -443,9 +341,19 @@
                             "policy": "GRANT"
                         }
                     ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.cameraconnect",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
                 }
             ],
-            "screenCaptureDisabled": true,
             "addUserDisabled": true,
             "factoryResetDisabled": true,
             "mountPhysicalMediaDisabled": true,
@@ -480,8 +388,307 @@
             }
         },
         {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
+            "version": "21",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "BLOCKED",
+                    "managedConfiguration": {
+                        "URLBlocklist": [
+                            "*"
+                        ],
+                        "URLAllowlist": [
+                            "pccinfo.chingluh.com.vn",
+                            "172.16.16.70"
+                        ],
+                        "Recommended": [
+                            "pccinfo.chingluh.com.vn"
+                        ],
+                        "IncognitoModeAvailability": "1",
+                        "ForceGoogleSafeSearch": "true",
+                        "HomepageLocation": "https://pccinfo.chingluh.com.vn"
+                    }
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.assetmanagement",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.approveddocuments",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.cameraconnect",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "addUserDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "modifyAccountsDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "locationMode": "LOCATION_ENFORCED",
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-pcccoe",
+            "version": "7",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.adobe.reader",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED",
+                    "managedConfiguration": {
+                        "URLBlocklist": [
+                            "*"
+                        ],
+                        "URLAllowlist": [
+                            "chingluh.com.vn",
+                            "chingluh.com"
+                        ],
+                        "Recommended": [
+                            "pccinfo.chingluh.com.vn"
+                        ],
+                        "IncognitoModeAvailability": "1",
+                        "ForceGoogleSafeSearch": "true",
+                        "HomepageLocation": "https://pccinfo.chingluh.com.vn"
+                    }
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.assetmanagement",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.approveddocuments",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.trialissueform",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
             "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
-            "version": "6",
+            "version": "7",
             "applications": [
                 {
                     "packageName": "com.google.android.googlequicksearchbox",
@@ -554,6 +761,28 @@
                         "ForceGoogleSafeSearch": "true",
                         "HomepageLocation": "https://pccinfo.chingluh.com.vn"
                     }
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.trialissueform",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
                 }
             ],
             "screenCaptureDisabled": true,
@@ -585,9 +814,254 @@
             "advancedSecurityOverrides": {
                 "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
             }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/clgpcc-smartphone-smj260g",
+            "version": "9",
+            "applications": [
+                {
+                    "packageName": "com.google.android.apps.searchlite",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "FORCE_INSTALLED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.zing.zalo",
+                    "installType": "FORCE_INSTALLED",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.READ_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.WRITE_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "jp.naver.line.android",
+                    "installType": "FORCE_INSTALLED",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.READ_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.WRITE_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        }
+                    ]
+                },
+                {
+                    "packageName": "com.android.chrome",
+                    "installType": "FORCE_INSTALLED",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.READ_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        },
+                        {
+                            "permission": "android.permission.WRITE_EXTERNAL_STORAGE",
+                            "policy": "DENY"
+                        }
+                    ],
+                    "managedConfiguration": {
+                        "URLBlocklist": [
+                            "*"
+                        ],
+                        "URLAllowlist": [
+                            "chingluh.com.vn",
+                            "chingluh.com"
+                        ],
+                        "Recommended": [
+                            "pccinfo.chingluh.com.vn"
+                        ],
+                        "IncognitoModeAvailability": "1",
+                        "ForceGoogleSafeSearch": "true",
+                        "HomepageLocation": "https://pccinfo.chingluh.com.vn"
+                    }
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "screenCaptureDisabled": true,
+            "addUserDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
+        },
+        {
+            "name": "enterprises/LC01tmuh69/policies/emm-jv-s22",
+            "version": "1",
+            "applications": [
+                {
+                    "packageName": "com.google.android.googlequicksearchbox",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.gm",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.clockpackage",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.gallery3d",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.app.contacts",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.messaging",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.samsung.android.dialer",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.myfiles",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.sec.android.app.camera",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.youtube",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "com.google.android.apps.docs",
+                    "installType": "BLOCKED"
+                },
+                {
+                    "packageName": "chingluhgroup.ecosystem.takesampleimage.v3",
+                    "installType": "AVAILABLE",
+                    "defaultPermissionPolicy": "GRANT",
+                    "permissionGrants": [
+                        {
+                            "permission": "android.permission.CAMERA",
+                            "policy": "GRANT"
+                        }
+                    ]
+                }
+            ],
+            "addUserDisabled": true,
+            "factoryResetDisabled": true,
+            "mountPhysicalMediaDisabled": true,
+            "modifyAccountsDisabled": true,
+            "bluetoothContactSharingDisabled": true,
+            "shortSupportMessage": {
+                "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "passwordRequirements": {
+                "passwordMinimumLength": 6,
+                "passwordQuality": "ALPHABETIC"
+            },
+            "bluetoothConfigDisabled": true,
+            "cellBroadcastsConfigDisabled": true,
+            "mobileNetworksConfigDisabled": true,
+            "tetheringConfigDisabled": true,
+            "outgoingBeamDisabled": true,
+            "outgoingCallsDisabled": true,
+            "smsDisabled": true,
+            "usbFileTransferDisabled": true,
+            "frpAdminEmails": [
+                "pccinfo.chingluh@gmail.com"
+            ],
+            "deviceOwnerLockScreenInfo": {
+                "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
+            },
+            "locationMode": "LOCATION_ENFORCED",
+            "bluetoothDisabled": true,
+            "privateKeySelectionEnabled": true,
+            "advancedSecurityOverrides": {
+                "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
+            }
         }
     ],
-    "devices": [
+    "devices": 
+    [
         {
             "name": "enterprises/LC01tmuh69/devices/3054bdb134a3ae51",
             "managementMode": "DEVICE_OWNER",

@@ -1,0 +1,1168 @@
+{
+    "Permission": [
+        {
+            "id": "ACCEPT_HANDOVER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gọi điện tiếp tục cuộc gọi đã được bắt đầu trong một ứng dụng khác.",
+            "description_en": "Allows a calling app to continue a call which was started in another app."
+        },
+        {
+            "id": "ACCESS_BACKGROUND_LOCATION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập vị trí ở chế độ nền.",
+            "description_en": "Allows an app to access location in the background."
+        },
+        {
+            "id": "ACCESS_BLOBS_ACROSS_USERS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập vào các đốm màu dữ liệu giữa những người dùng.",
+            "description_en": "Allows an application to access data blobs across users."
+        },
+        {
+            "id": "ACCESS_CHECKIN_PROPERTIES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập đọc/ghi vào bảng 'thuộc tính' trong cơ sở dữ liệu đăng ký để thay đổi các giá trị được tải lên.",
+            "description_en": "Allows read/write access to the 'properties' table in the checkin database, to change values that get uploaded."
+        },
+        {
+            "id": "ACCESS_COARSE_LOCATION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập vị trí gần đúng.",
+            "description_en": "Allows an app to access approximate location."
+        },
+        {
+            "id": "ACCESS_FINE_LOCATION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập vị trí chính xác.",
+            "description_en": "Allows an app to access precise location."
+        },
+        {
+            "id": "ACCESS_LOCATION_EXTRA_COMMANDS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập các lệnh của nhà cung cấp vị trí bổ sung.",
+            "description_en": "Allows an application to access extra location provider commands."
+        },
+        {
+            "id": "ACCESS_MEDIA_LOCATION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập bất kỳ vị trí địa lý nào được duy trì trong bộ sưu tập được chia sẻ của người dùng.",
+            "description_en": "Allows an application to access any geographic locations persisted in the user's shared collection."
+        },
+        {
+            "id": "ACCESS_NETWORK_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập thông tin về mạng.",
+            "description_en": "Allows applications to access information about networks."
+        },
+        {
+            "id": "ACCESS_NOTIFICATION_POLICY",
+            "constant": "android.permission",
+            "description_vi": "Quyền đánh dấu cho các ứng dụng muốn truy cập chính sách thông báo.",
+            "description_en": "Marker permission for applications that wish to access notification policy."
+        },
+        {
+            "id": "ACCESS_WIFI_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập thông tin về mạng Wi-Fi.",
+            "description_en": "Allows applications to access information about Wi-Fi networks."
+        },
+        {
+            "id": "ACCOUNT_MANAGER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng gọi vào AccountAuthenticators.",
+            "description_en": "Allows applications to call into AccountAuthenticators."
+        },
+        {
+            "id": "ACTIVITY_RECOGNITION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng nhận dạng hoạt động thể chất.",
+            "description_en": "Allows an application to recognize physical activity."
+        },
+        {
+            "id": "ADD_VOICEMAIL",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thêm thư thoại vào hệ thống.",
+            "description_en": "Allows an application to add voicemails into the system."
+        },
+        {
+            "id": "ANSWER_PHONE_CALLS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng trả lời cuộc gọi điện thoại đến.",
+            "description_en": "Allows the app to answer an incoming phone call."
+        },
+        {
+            "id": "BATTERY_STATS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thu thập số liệu thống kê về pin",
+            "description_en": "Allows an application to collect battery statistics"
+        },
+        {
+            "id": "BIND_ACCESSIBILITY_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một AccessibilityService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an AccessibilityService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_APPWIDGET",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng báo cho dịch vụ AppWidget biết ứng dụng nào có thể truy cập dữ liệu của AppWidget.",
+            "description_en": "Allows an application to tell the AppWidget service which application can access AppWidget's data."
+        },
+        {
+            "id": "BIND_AUTOFILL_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a AutofillService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a AutofillService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_CALL_REDIRECTION_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a CallRedirectionService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a CallRedirectionService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_CARRIER_MESSAGING_CLIENT_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Một lớp con của CarrierMessagingClientServicephải được bảo vệ với sự cho phép này.",
+            "description_en": "A subclass of CarrierMessagingClientService must be protected with this permission."
+        },
+        {
+            "id": "BIND_CARRIER_SERVICES",
+            "constant": "android.permission",
+            "description_vi": "Quy trình hệ thống được phép liên kết với các dịch vụ trong ứng dụng của nhà cung cấp dịch vụ sẽ có quyền này.",
+            "description_en": "The system process that is allowed to bind to services in carrier apps will have this permission."
+        },
+        {
+            "id": "BIND_COMPANION_DEVICE_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi bất kỳ CompanionDeviceServices nào để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by any CompanionDeviceServices to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_CONDITION_PROVIDER_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a ConditionProviderService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a ConditionProviderService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_CONTROLS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép SystemUI yêu cầu kiểm soát của bên thứ ba.",
+            "description_en": "Allows SystemUI to request third party controls."
+        },
+        {
+            "id": "BIND_DEVICE_ADMIN",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi bộ thu quản trị thiết bị, để đảm bảo rằng chỉ hệ thống mới có thể tương tác với nó.",
+            "description_en": "Must be required by device administration receiver, to ensure that only the system can interact with it."
+        },
+        {
+            "id": "BIND_DREAM_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một DreamService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an DreamService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_INCALL_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a InCallService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a InCallService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_INPUT_METHOD",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một InputMethodService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an InputMethodService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_MIDI_DEVICE_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một MidiDeviceService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an MidiDeviceService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_NFC_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một HostApduService hoặc OffHostApduServiceđể đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a HostApduService or OffHostApduService to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_NOTIFICATION_LISTENER_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một NotificationListenerService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an NotificationListenerService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_PRINT_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a PrintService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a PrintService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_QUICK_ACCESS_WALLET_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được a yêu cầu QuickAccessWalletService để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a QuickAccessWalletService to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_QUICK_SETTINGS_TILE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng liên kết với các ô cài đặt nhanh của bên thứ ba.",
+            "description_en": "Allows an application to bind to third party quick settings tiles."
+        },
+        {
+            "id": "BIND_REMOTEVIEWS",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a RemoteViewsService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a RemoteViewsService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_SCREENING_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a CallScreeningService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a CallScreeningService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_TELECOM_CONNECTION_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a ConnectionService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a ConnectionService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_TEXT_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi TextService (ví dụ: SpellCheckerService) để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a TextService (e.g. SpellCheckerService) to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_TV_INPUT",
+            "constant": "android.permission",
+            "description_vi": "Phải được a yêu cầu TvInputService để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a TvInputService to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_TV_INTERACTIVE_APP",
+            "constant": "android.permission",
+            "description_vi": "Phải được a yêu cầu TvInteractiveAppService để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a TvInteractiveAppService to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_VISUAL_VOICEMAIL_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một liên kết VisualVoicemailServiceđể đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a link VisualVoicemailService to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_VOICE_INTERACTION",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a VoiceInteractionService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a VoiceInteractionService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_VPN_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a VpnService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a VpnService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_VR_LISTENER_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi một VrListenerService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by an VrListenerService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BIND_WALLPAPER",
+            "constant": "android.permission",
+            "description_vi": "Phải được yêu cầu bởi a WallpaperService, để đảm bảo rằng chỉ hệ thống mới có thể liên kết với nó.",
+            "description_en": "Must be required by a WallpaperService, to ensure that only the system can bind to it."
+        },
+        {
+            "id": "BLUETOOTH",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng kết nối với các thiết bị bluetooth được ghép nối.",
+            "description_en": "Allows applications to connect to paired bluetooth devices."
+        },
+        {
+            "id": "BLUETOOTH_ADMIN",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng khám phá và ghép nối các thiết bị bluetooth.",
+            "description_en": "Allows applications to discover and pair bluetooth devices."
+        },
+        {
+            "id": "BLUETOOTH_ADVERTISE",
+            "constant": "android.permission",
+            "description_vi": "Bắt buộc để có thể quảng cáo tới các thiết bị Bluetooth lân cận.",
+            "description_en": "Required to be able to advertise to nearby Bluetooth devices."
+        },
+        {
+            "id": "BLUETOOTH_CONNECT",
+            "constant": "android.permission",
+            "description_vi": "Cần thiết để có thể kết nối với các thiết bị Bluetooth được ghép nối.",
+            "description_en": "Required to be able to connect to paired Bluetooth devices."
+        },
+        {
+            "id": "BLUETOOTH_PRIVILEGED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng ghép nối các thiết bị bluetooth mà không cần tương tác của người dùng và cho phép hoặc không cho phép truy cập danh bạ hoặc truy cập tin nhắn.",
+            "description_en": "Allows applications to pair bluetooth devices without user interaction, and to allow or disallow phonebook access or message access."
+        },
+        {
+            "id": "BLUETOOTH_SCAN",
+            "constant": "android.permission",
+            "description_vi": "Cần thiết để có thể khám phá và ghép nối các thiết bị Bluetooth ở gần.",
+            "description_en": "Required to be able to discover and pair nearby Bluetooth devices."
+        },
+        {
+            "id": "BODY_SENSORS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập dữ liệu từ các cảm biến mà người dùng sử dụng để đo những gì đang xảy ra bên trong cơ thể họ, chẳng hạn như nhịp tim.",
+            "description_en": "Allows an application to access data from sensors that the user uses to measure what is happening inside their body, such as heart rate."
+        },
+        {
+            "id": "BODY_SENSORS_BACKGROUND",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập dữ liệu từ các cảm biến mà người dùng sử dụng để đo những gì đang xảy ra bên trong cơ thể họ, chẳng hạn như nhịp tim.",
+            "description_en": "Allows an application to access data from sensors that the user uses to measure what is happening inside their body, such as heart rate."
+        },
+        {
+            "id": "BROADCAST_PACKAGE_REMOVED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng phát thông báo rằng gói ứng dụng đã bị xóa.",
+            "description_en": "Allows an application to broadcast a notification that an application package has been removed."
+        },
+        {
+            "id": "BROADCAST_SMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng phát thông báo nhận SMS.",
+            "description_en": "Allows an application to broadcast an SMS receipt notification."
+        },
+        {
+            "id": "BROADCAST_STICKY",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng phát các ý định cố định.",
+            "description_en": "Allows an application to broadcast sticky intents."
+        },
+        {
+            "id": "BROADCAST_WAP_PUSH",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng phát thông báo biên nhận WAP PUSH.",
+            "description_en": "Allows an application to broadcast a WAP PUSH receipt notification."
+        },
+        {
+            "id": "CALL_COMPANION_APP",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng triển khai InCallServiceAPI đủ điều kiện được bật làm ứng dụng đồng hành gọi điện.",
+            "description_en": "Allows an app which implements the InCallService API to be eligible to be enabled as a calling companion app."
+        },
+        {
+            "id": "CALL_PHONE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng bắt đầu cuộc gọi điện thoại mà không cần thông qua giao diện người dùng Trình quay số để người dùng xác nhận cuộc gọi.",
+            "description_en": "Allows an application to initiate a phone call without going through the Dialer user interface for the user to confirm the call."
+        },
+        {
+            "id": "CALL_PRIVILEGED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gọi bất kỳ số điện thoại nào, kể cả số khẩn cấp, mà không cần thông qua giao diện người dùng Trình quay số để người dùng xác nhận cuộc gọi được thực hiện.",
+            "description_en": "Allows an application to call any phone number, including emergency numbers, without going through the Dialer user interface for the user to confirm the call being placed."
+        },
+        {
+            "id": "CAMERA",
+            "constant": "android.permission",
+            "description_vi": "Cần thiết để có thể truy cập vào thiết bị máy ảnh.",
+            "description_en": "Required to be able to access the camera device."
+        },
+        {
+            "id": "CAPTURE_AUDIO_OUTPUT",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi lại đầu ra âm thanh.",
+            "description_en": "Allows an application to capture audio output."
+        },
+        {
+            "id": "CHANGE_COMPONENT_ENABLED_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thay đổi xem có bật hay không bật một thành phần ứng dụng (không phải thành phần của ứng dụng).",
+            "description_en": "Allows an application to change whether an application component (other than its own) is enabled or not."
+        },
+        {
+            "id": "CHANGE_CONFIGURATION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi cấu hình hiện tại, chẳng hạn như ngôn ngữ.",
+            "description_en": "Allows an application to modify the current configuration, such as locale."
+        },
+        {
+            "id": "CHANGE_NETWORK_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng thay đổi trạng thái kết nối mạng.",
+            "description_en": "Allows applications to change network connectivity state."
+        },
+        {
+            "id": "CHANGE_WIFI_MULTICAST_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng vào chế độ Wi-Fi Multicast.",
+            "description_en": "Allows applications to enter Wi-Fi Multicast mode."
+        },
+        {
+            "id": "CHANGE_WIFI_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng thay đổi trạng thái kết nối Wi-Fi.",
+            "description_en": "Allows applications to change Wi-Fi connectivity state."
+        },
+        {
+            "id": "CLEAR_APP_CACHE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng xóa bộ nhớ cache của tất cả các ứng dụng đã cài đặt trên thiết bị.",
+            "description_en": "Allows an application to clear the caches of all installed applications on the device."
+        },
+        {
+            "id": "CONTROL_LOCATION_UPDATES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép bật/tắt thông báo cập nhật vị trí từ radio.",
+            "description_en": "Allows enabling/disabling location update notifications from the radio."
+        },
+        {
+            "id": "DELETE_PACKAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng xóa các gói.",
+            "description_en": "Allows an application to delete packages."
+        },
+        {
+            "id": "DELIVER_COMPANION_MESSAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gửi tin nhắn đồng hành đến hệ thống",
+            "description_en": "Allows an application to deliver companion messages to system"
+        },
+        {
+            "id": "DIAGNOSTIC",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng RW tới tài nguyên chẩn đoán.",
+            "description_en": "Allows applications to RW to diagnostic resources."
+        },
+        {
+            "id": "DISABLE_KEYGUARD",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng vô hiệu hóa keyguard nếu nó không an toàn.",
+            "description_en": "Allows applications to disable the keyguard if it is not secure."
+        },
+        {
+            "id": "DUMP",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy xuất thông tin kết xuất trạng thái từ các dịch vụ hệ thống.",
+            "description_en": "Allows an application to retrieve state dump information from system services."
+        },
+        {
+            "id": "EXPAND_STATUS_BAR",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng mở rộng hoặc thu gọn thanh trạng thái.",
+            "description_en": "Allows an application to expand or collapse the status bar."
+        },
+        {
+            "id": "FACTORY_TEST",
+            "constant": "android.permission",
+            "description_vi": "Chạy với tư cách ứng dụng thử nghiệm của nhà sản xuất, chạy với tư cách người dùng root.",
+            "description_en": "Run as a manufacturer test application, running as the root user."
+        },
+        {
+            "id": "FOREGROUND_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thông thường sử dụng Service.startForeground.",
+            "description_en": "Allows a regular application to use Service.startForeground."
+        },
+        {
+            "id": "GET_ACCOUNTS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập vào danh sách tài khoản trong Dịch vụ tài khoản.",
+            "description_en": "Allows access to the list of accounts in the Accounts Service."
+        },
+        {
+            "id": "GET_ACCOUNTS_PRIVILEGED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập vào danh sách tài khoản trong Dịch vụ tài khoản.",
+            "description_en": "Allows access to the list of accounts in the Accounts Service."
+        },
+        {
+            "id": "GET_PACKAGE_SIZE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng tìm ra dung lượng được sử dụng bởi bất kỳ gói nào.",
+            "description_en": "Allows an application to find out the space used by any package."
+        },
+        {
+            "id": "GLOBAL_SEARCH",
+            "constant": "android.permission",
+            "description_vi": "Quyền này có thể được sử dụng trên các nhà cung cấp nội dung để cho phép hệ thống tìm kiếm toàn cầu truy cập dữ liệu của họ.",
+            "description_en": "This permission can be used on content providers to allow the global search system to access their data."
+        },
+        {
+            "id": "HIDE_OVERLAY_WINDOWS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ngăn các cửa sổ không thuộc hệ thống được vẽ lên trên ứng dụng",
+            "description_en": "Allows an app to prevent non-system-overlay windows from being drawn on top of it"
+        },
+        {
+            "id": "HIGH_SAMPLING_RATE_SENSORS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy cập vào dữ liệu cảm biến với tốc độ lấy mẫu lớn hơn 200 Hz.",
+            "description_en": "Allows an app to access sensor data with a sampling rate greater than 200 Hz."
+        },
+        {
+            "id": "INSTALL_LOCATION_PROVIDER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng cài đặt nhà cung cấp vị trí vào Trình quản lý vị trí.",
+            "description_en": "Allows an application to install a location provider into the Location Manager."
+        },
+        {
+            "id": "INSTALL_PACKAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng cài đặt các gói.",
+            "description_en": "Allows an application to install packages."
+        },
+        {
+            "id": "INSTALL_SHORTCUT",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng cài đặt lối tắt trong Trình khởi chạy.",
+            "description_en": "Allows an application to install a shortcut in Launcher."
+        },
+        {
+            "id": "INSTANT_APP_FOREGROUND_SERVICE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng tức thì tạo dịch vụ tiền cảnh.",
+            "description_en": "Allows an instant app to create foreground services."
+        },
+        {
+            "id": "INTERACT_ACROSS_PROFILES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép tương tác giữa các hồ sơ trong cùng một nhóm hồ sơ.",
+            "description_en": "Allows interaction across profiles in the same profile group."
+        },
+        {
+            "id": "INTERNET",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng mở ổ cắm mạng.",
+            "description_en": "Allows applications to open network sockets."
+        },
+        {
+            "id": "KILL_BACKGROUND_PROCESSES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gọi ActivityManager.killBackgroundProcesses(String).",
+            "description_en": "Allows an application to call ActivityManager.killBackgroundProcesses(String)."
+        },
+        {
+            "id": "LAUNCH_MULTI_PANE_SETTINGS_DEEP_LINK",
+            "constant": "android.permission",
+            "description_vi": "Một ứng dụng cần có quyền này để Settings.ACTION_SETTINGS_EMBED_DEEP_LINK_ACTIVITYhiển thị Activityứng dụng được nhúng trong ứng dụng Cài đặt.",
+            "description_en": "An application needs this permission for Settings.ACTION_SETTINGS_EMBED_DEEP_LINK_ACTIVITY to show its Activity embedded in Settings app."
+        },
+        {
+            "id": "LOADER_USAGE_STATS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép trình tải dữ liệu đọc nhật ký truy cập của gói.",
+            "description_en": "Allows a data loader to read a package's access logs."
+        },
+        {
+            "id": "LOCATION_HARDWARE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sử dụng các tính năng vị trí trong phần cứng, chẳng hạn như api định vị địa lý.",
+            "description_en": "Allows an application to use location features in hardware, such as the geofencing api."
+        },
+        {
+            "id": "MANAGE_DOCUMENTS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng quản lý quyền truy cập vào tài liệu, thường là một phần của bộ chọn tài liệu.",
+            "description_en": "Allows an application to manage access to documents, usually as part of a document picker."
+        },
+        {
+            "id": "MANAGE_EXTERNAL_STORAGE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng có quyền truy cập rộng rãi vào bộ nhớ ngoài trong bộ nhớ có phạm vi.",
+            "description_en": "Allows an application a broad access to external storage in scoped storage."
+        },
+        {
+            "id": "MANAGE_MEDIA",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi và xóa các tệp phương tiện trên thiết bị này hoặc bất kỳ thiết bị lưu trữ được kết nối nào mà không cần xác nhận của người dùng.",
+            "description_en": "Allows an application to modify and delete media files on this device or any connected storage device without user confirmation."
+        },
+        {
+            "id": "MANAGE_ONGOING_CALLS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy vấn chi tiết cuộc gọi đang diễn ra và quản lý các cuộc gọi đang diễn ra.",
+            "description_en": "Allows to query ongoing call details and manage ongoing calls"
+        },
+        {
+            "id": "MANAGE_OWN_CALLS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gọi điện quản lý cuộc gọi của chính nó thông qua ConnectionServicecác API tự quản lý.",
+            "description_en": "Allows a calling application which manages its own calls through the self-managed ConnectionService APIs."
+        },
+        {
+            "id": "MANAGE_WIFI_INTERFACES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng nhận thông báo khi không thể đáp ứng yêu cầu giao diện Wi-Fi mà không phá bỏ một hoặc nhiều giao diện khác và đưa ra quyết định phê duyệt hay từ chối yêu cầu đó.",
+            "description_en": "Allows applications to get notified when a Wi-Fi interface request cannot be satisfied without tearing down one or more other interfaces, and provide a decision whether to approve the request or reject it."
+        },
+        {
+            "id": "MANAGE_WIFI_NETWORK_SELECTION",
+            "constant": "android.permission",
+            "description_vi": "Quyền này được sử dụng để cho phép các OEM cấp cho ứng dụng đáng tin cậy của họ quyền truy cập vào một tập hợp con các API wifi đặc quyền để cải thiện hiệu suất wifi.",
+            "description_en": "This permission is used to let OEMs grant their trusted app access to a subset of privileged wifi APIs to improve wifi performance."
+        },
+        {
+            "id": "MASTER_CLEAR",
+            "constant": "android.permission",
+            "description_vi": "Không được sử dụng bởi các ứng dụng của bên thứ ba.",
+            "description_en": "Not for use by third-party applications."
+        },
+        {
+            "id": "MEDIA_CONTENT_CONTROL",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng biết nội dung nào đang phát và kiểm soát việc phát lại nội dung đó.",
+            "description_en": "Allows an application to know what content is playing and control its playback."
+        },
+        {
+            "id": "MODIFY_AUDIO_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi cài đặt âm thanh chung.",
+            "description_en": "Allows an application to modify global audio settings."
+        },
+        {
+            "id": "MODIFY_PHONE_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép sửa đổi trạng thái điện thoại - bật nguồn, mmi, v.v.",
+            "description_en": "Allows modification of the telephony state - power on, mmi, etc."
+        },
+        {
+            "id": "MOUNT_FORMAT_FILESYSTEMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép định dạng hệ thống tệp để lưu trữ di động.",
+            "description_en": "Allows formatting file systems for removable storage."
+        },
+        {
+            "id": "MOUNT_UNMOUNT_FILESYSTEMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép gắn và ngắt kết nối các hệ thống tệp để lưu trữ di động.",
+            "description_en": "Allows mounting and unmounting file systems for removable storage."
+        },
+        {
+            "id": "NEARBY_WIFI_DEVICES",
+            "constant": "android.permission",
+            "description_vi": "Cần thiết để có thể quảng cáo và kết nối với các thiết bị lân cận qua Wi-Fi.",
+            "description_en": "Required to be able to advertise and connect to nearby devices via Wi-Fi."
+        },
+        {
+            "id": "NFC",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng thực hiện các thao tác I/O qua NFC.",
+            "description_en": "Allows applications to perform I/O operations over NFC."
+        },
+        {
+            "id": "NFC_PREFERRED_PAYMENT_INFO",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng nhận thông tin dịch vụ thanh toán ưu tiên NFC.",
+            "description_en": "Allows applications to receive NFC preferred payment service information."
+        },
+        {
+            "id": "NFC_TRANSACTION_EVENT",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng nhận các sự kiện giao dịch NFC.",
+            "description_en": "Allows applications to receive NFC transaction events."
+        },
+        {
+            "id": "OVERRIDE_WIFI_CONFIG",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi bất kỳ cấu hình wifi nào, ngay cả khi được tạo bởi một ứng dụng khác.",
+            "description_en": "Allows an application to modify any wifi configuration, even if created by another application."
+        },
+        {
+            "id": "PACKAGE_USAGE_STATS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thu thập số liệu thống kê sử dụng thành phần",
+            "description_en": "Allows an application to collect component usage statistics"
+        },
+        {
+            "id": "POST_NOTIFICATIONS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đăng thông báo",
+            "description_en": "Allows an app to post notifications"
+        },
+        {
+            "id": "QUERY_ALL_PACKAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy vấn bất kỳ ứng dụng bình thường nào trên thiết bị, bất kể khai báo tệp kê khai.",
+            "description_en": "Allows query of any normal app on the device, regardless of manifest declarations."
+        },
+        {
+            "id": "READ_ASSISTANT_APP_SEARCH_DATA",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy vấn dữ liệu toàn cầu trong Tìm kiếm ứng dụng hiển thị với vai trò TRỢ LÝ.",
+            "description_en": "Allows an application to query over global data in AppSearch that's visible to the ASSISTANT role."
+        },
+        {
+            "id": "READ_BASIC_PHONE_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập chỉ đọc vào trạng thái điện thoại với quyền không nguy hiểm, bao gồm thông tin như loại mạng di động, phiên bản phần mềm.",
+            "description_en": "Allows read only access to phone state with a non dangerous permission, including the information like cellular network type, software version."
+        },
+        {
+            "id": "READ_CALENDAR",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc dữ liệu lịch của người dùng.",
+            "description_en": "Allows an application to read the user's calendar data."
+        },
+        {
+            "id": "READ_CALL_LOG",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc nhật ký cuộc gọi của người dùng.",
+            "description_en": "Allows an application to read the user's call log."
+        },
+        {
+            "id": "READ_CONTACTS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc dữ liệu danh bạ của người dùng.",
+            "description_en": "Allows an application to read the user's contacts data."
+        },
+        {
+            "id": "READ_EXTERNAL_STORAGE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc từ bộ nhớ ngoài.",
+            "description_en": "Allows an application to read from external storage."
+        },
+        {
+            "id": "READ_HOME_APP_SEARCH_DATA",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng truy vấn dữ liệu chung trong Tìm kiếm ứng dụng hiển thị với vai trò HOME.",
+            "description_en": "Allows an application to query over global data in AppSearch that's visible to the HOME role."
+        },
+        {
+            "id": "READ_LOGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc tệp nhật ký hệ thống cấp thấp.",
+            "description_en": "Allows an application to read the low-level system log files."
+        },
+        {
+            "id": "READ_MEDIA_AUDIO",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc tệp âm thanh từ bộ nhớ ngoài.",
+            "description_en": "Allows an application to read audio files from external storage."
+        },
+        {
+            "id": "READ_MEDIA_IMAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc tệp hình ảnh từ bộ nhớ ngoài.",
+            "description_en": "Allows an application to read image files from external storage."
+        },
+        {
+            "id": "READ_MEDIA_VIDEO",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc tệp video từ bộ nhớ ngoài.",
+            "description_en": "Allows an application to read video files from external storage."
+        },
+        {
+            "id": "READ_NEARBY_STREAMING_POLICY",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc chính sách phát trực tuyến lân cận.",
+            "description_en": "Allows an application to read nearby streaming policy."
+        },
+        {
+            "id": "READ_PHONE_NUMBERS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập đọc vào (các) số điện thoại của thiết bị.",
+            "description_en": "Allows read access to the device's phone number(s)."
+        },
+        {
+            "id": "READ_PHONE_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép quyền truy cập chỉ đọc vào trạng thái điện thoại, bao gồm thông tin mạng di động hiện tại, trạng thái của mọi cuộc gọi đang diễn ra và danh sách mọi PhoneAccountcuộc gọi đã đăng ký trên thiết bị.",
+            "description_en": "Allows read only access to phone state, including the current cellular network information, the status of any ongoing calls, and a list of any PhoneAccounts registered on the device."
+        },
+        {
+            "id": "READ_PRECISE_PHONE_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập chỉ đọc vào trạng thái điện thoại chính xác.",
+            "description_en": "Allows read only access to precise phone state."
+        },
+        {
+            "id": "READ_SMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc tin nhắn SMS.",
+            "description_en": "Allows an application to read SMS messages."
+        },
+        {
+            "id": "READ_SYNC_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng đọc cài đặt đồng bộ hóa.",
+            "description_en": "Allows applications to read the sync settings."
+        },
+        {
+            "id": "READ_SYNC_STATS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc số liệu thống kê đồng bộ hóa.",
+            "description_en": "Allows applications to read the sync stats."
+        },
+        {
+            "id": "READ_VOICEMAIL",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc thư thoại trong hệ thống.",
+            "description_en": "Allows an application to read voicemails in the system."
+        },
+        {
+            "id": "REBOOT",
+            "constant": "android.permission",
+            "description_vi": "Cần thiết để có thể khởi động lại thiết bị.",
+            "description_en": "Required to be able to reboot the device."
+        },
+        {
+            "id": "RECEIVE_BOOT_COMPLETED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng nhận nội dung Intent.ACTION_BOOT_COMPLETED được phát sau khi hệ thống khởi động xong.",
+            "description_en": "Allows an application to receive the Intent.ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting."
+        },
+        {
+            "id": "RECEIVE_MMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng theo dõi các tin nhắn MMS đến.",
+            "description_en": "Allows an application to monitor incoming MMS messages."
+        },
+        {
+            "id": "RECEIVE_SMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng nhận tin nhắn SMS.",
+            "description_en": "Allows an application to receive SMS messages."
+        },
+        {
+            "id": "RECEIVE_WAP_PUSH",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng nhận tin nhắn đẩy WAP.",
+            "description_en": "Allows an application to receive WAP push messages."
+        },
+        {
+            "id": "RECORD_AUDIO",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi lại âm thanh.",
+            "description_en": "Allows an application to record audio."
+        },
+        {
+            "id": "REORDER_TASKS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng thay đổi thứ tự Z của các tác vụ.",
+            "description_en": "Allows an application to change the Z-order of tasks."
+        },
+        {
+            "id": "REQUEST_COMPANION_PROFILE_APP_STREAMING",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu được liên kết với màn hình ảo có khả năng phát trực tuyến các ứng dụng Android ( AssociationRequest.DEVICE_PROFILE_APP_STREAMING) bởi CompanionDeviceManager.",
+            "description_en": "Allows application to request to be associated with a virtual display capable of streaming Android applications (AssociationRequest.DEVICE_PROFILE_APP_STREAMING) by CompanionDeviceManager."
+        },
+        {
+            "id": "REQUEST_COMPANION_PROFILE_AUTOMOTIVE_PROJECTION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu được liên kết với bộ phận đầu xe có khả năng chiếu ô tô ( AssociationRequest.DEVICE_PROFILE_AUTOMOTIVE_PROJECTION) bằng cách CompanionDeviceManager.",
+            "description_en": "Allows application to request to be associated with a vehicle head unit capable of automotive projection (AssociationRequest.DEVICE_PROFILE_AUTOMOTIVE_PROJECTION) by CompanionDeviceManager."
+        },
+        {
+            "id": "REQUEST_COMPANION_PROFILE_COMPUTER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu được liên kết với máy tính để chia sẻ chức năng và/hoặc dữ liệu với các thiết bị khác, chẳng hạn như thông báo, ảnh và phương tiện ( AssociationRequest.DEVICE_PROFILE_COMPUTER) bằng cách CompanionDeviceManager.",
+            "description_en": "Allows application to request to be associated with a computer to share functionality and/or data with other devices, such as notifications, photos and media (AssociationRequest.DEVICE_PROFILE_COMPUTER) by CompanionDeviceManager."
+        },
+        {
+            "id": "REQUEST_COMPANION_PROFILE_WATCH",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu được liên kết với một thiết bị thông qua CompanionDeviceManager dưới dạng 'đồng hồ'",
+            "description_en": "Allows app to request to be associated with a device via CompanionDeviceManager as a 'watch'"
+        },
+        {
+            "id": "REQUEST_COMPANION_RUN_IN_BACKGROUND",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đồng hành chạy trong nền.",
+            "description_en": "Allows a companion app to run in the background."
+        },
+        {
+            "id": "REQUEST_COMPANION_SELF_MANAGED",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng tạo liên kết 'tự quản lý'.",
+            "description_en": "Allows an application to create a 'self-managed' association."
+        },
+        {
+            "id": "REQUEST_COMPANION_START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đồng hành bắt đầu dịch vụ nền trước từ nền.",
+            "description_en": "Allows a companion app to start a foreground service from the background."
+        },
+        {
+            "id": "REQUEST_COMPANION_USE_DATA_IN_BACKGROUND",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đồng hành sử dụng dữ liệu trong nền.",
+            "description_en": "Allows a companion app to use data in the background."
+        },
+        {
+            "id": "REQUEST_DELETE_PACKAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu xóa các gói.",
+            "description_en": "Allows an application to request deleting packages."
+        },
+        {
+            "id": "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+            "constant": "android.permission",
+            "description_vi": "Quyền ứng dụng phải giữ để sử dụng Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS.",
+            "description_en": "Permission an application must hold in order to use Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS."
+        },
+        {
+            "id": "REQUEST_INSTALL_PACKAGES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu cài đặt các gói.",
+            "description_en": "Allows an application to request installing packages."
+        },
+        {
+            "id": "REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đăng ký nhận thông báo về thay đổi trạng thái hiện diện của thiết bị đồng hành được liên kết của chúng",
+            "description_en": "Allows an application to subscribe to notifications about the presence status change of their associated companion device"
+        },
+        {
+            "id": "REQUEST_PASSWORD_COMPLEXITY",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu độ phức tạp của khóa màn hình và nhắc người dùng cập nhật khóa màn hình lên một mức độ phức tạp nhất định.",
+            "description_en": "Allows an application to request the screen lock complexity and prompt users to update the screen lock to a certain complexity level."
+        },
+        {
+            "id": "SCHEDULE_EXACT_ALARM",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng sử dụng API cảnh báo chính xác.",
+            "description_en": "Allows applications to use exact alarm APIs."
+        },
+        {
+            "id": "SEND_RESPOND_VIA_MESSAGE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng (Điện thoại) gửi yêu cầu đến các ứng dụng khác để xử lý hành động phản hồi qua tin nhắn trong các cuộc gọi đến.",
+            "description_en": "Allows an application (Phone) to send a request to other applications to handle the respond-via-message action during incoming calls."
+        },
+        {
+            "id": "SEND_SMS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng gửi tin nhắn SMS.",
+            "description_en": "Allows an application to send SMS messages."
+        },
+        {
+            "id": "SET_ALARM",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng phát Ý định đặt báo thức cho người dùng.",
+            "description_en": "Allows an application to broadcast an Intent to set an alarm for the user."
+        },
+        {
+            "id": "SET_ALWAYS_FINISH",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng kiểm soát xem các hoạt động có kết thúc ngay lập tức khi được đặt ở chế độ nền hay không.",
+            "description_en": "Allows an application to control whether activities are immediately finished when put in the background."
+        },
+        {
+            "id": "SET_ANIMATION_SCALE",
+            "constant": "android.permission",
+            "description_vi": "Sửa đổi hệ số tỷ lệ hoạt hình toàn cầu.",
+            "description_en": "Modify the global animation scaling factor."
+        },
+        {
+            "id": "SET_DEBUG_APP",
+            "constant": "android.permission",
+            "description_vi": "Định cấu hình ứng dụng để gỡ lỗi.",
+            "description_en": "Configure an application for debugging."
+        },
+        {
+            "id": "SET_PROCESS_LIMIT",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đặt số lượng quy trình ứng dụng (không cần thiết) tối đa có thể chạy.",
+            "description_en": "Allows an application to set the maximum number of (not needed) application processes that can be running."
+        },
+        {
+            "id": "SET_TIME",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng đặt thời gian hệ thống trực tiếp.",
+            "description_en": "Allows applications to set the system time directly."
+        },
+        {
+            "id": "SET_TIME_ZONE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng đặt trực tiếp múi giờ hệ thống.",
+            "description_en": "Allows applications to set the system time zone directly."
+        },
+        {
+            "id": "SET_WALLPAPER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng đặt hình nền.",
+            "description_en": "Allows applications to set the wallpaper."
+        },
+        {
+            "id": "SET_WALLPAPER_HINTS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng đặt gợi ý hình nền.",
+            "description_en": "Allows applications to set the wallpaper hints."
+        },
+        {
+            "id": "SIGNAL_PERSISTENT_PROCESSES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng yêu cầu gửi tín hiệu đến tất cả các quy trình liên tục.",
+            "description_en": "Allow an application to request that a signal be sent to all persistent processes."
+        },
+        {
+            "id": "START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng bắt đầu dịch vụ tiền cảnh từ nền bất kỳ lúc nào.",
+            "description_en": "Allows an application to start foreground services from the background at any time."
+        },
+        {
+            "id": "START_VIEW_APP_FEATURES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép chủ sở hữu khởi động màn hình bằng danh sách các tính năng của ứng dụng.",
+            "description_en": "Allows the holder to start the screen with a list of app features."
+        },
+        {
+            "id": "START_VIEW_PERMISSION_USAGE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép chủ sở hữu bắt đầu màn hình sử dụng quyền cho một ứng dụng.",
+            "description_en": "Allows the holder to start the permission usage screen for an app."
+        },
+        {
+            "id": "STATUS_BAR",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng mở, đóng hoặc tắt thanh trạng thái và các biểu tượng của nó.",
+            "description_en": "Allows an application to open, close, or disable the status bar and its icons."
+        },
+        {
+            "id": "SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đăng ký trạng thái keyguard bị khóa (tức là đang hiển thị).",
+            "description_en": "Allows an application to subscribe to keyguard locked (i.e., showing) state."
+        },
+        {
+            "id": "SYSTEM_ALERT_WINDOW",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng tạo cửa sổ bằng cách sử dụng loại WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, được hiển thị ở đầu tất cả các ứng dụng khác.",
+            "description_en": "Allows an app to create windows using the type WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY, shown on top of all other apps."
+        },
+        {
+            "id": "TRANSMIT_IR",
+            "constant": "android.permission",
+            "description_vi": "Cho phép sử dụng bộ phát hồng ngoại của thiết bị, nếu có.",
+            "description_en": "Allows using the device's IR transmitter, if available."
+        },
+        {
+            "id": "UPDATE_DEVICE_STATS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng cập nhật số liệu thống kê về thiết bị.",
+            "description_en": "Allows an application to update device statistics."
+        },
+        {
+            "id": "UPDATE_PACKAGES_WITHOUT_USER_ACTION",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng chỉ ra PackageInstaller.SessionParams.setRequireUserAction(int) rằng hành động của người dùng không cần thiết đối với bản cập nhật ứng dụng.",
+            "description_en": "Allows an application to indicate via PackageInstaller.SessionParams.setRequireUserAction(int) that user action should not be required for an app update."
+        },
+        {
+            "id": "USE_BIOMETRIC",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sử dụng phương thức sinh trắc học được thiết bị hỗ trợ.",
+            "description_en": "Allows an app to use device supported biometric modalities."
+        },
+        {
+            "id": "USE_EXACT_ALARM",
+            "constant": "android.permission",
+            "description_vi": "Cho phép các ứng dụng sử dụng báo thức chính xác giống như với SCHEDULE_EXACT_ALARMnhưng không cần yêu cầu quyền này từ người dùng.",
+            "description_en": "Allows apps to use exact alarms just like with SCHEDULE_EXACT_ALARM but without needing to request this permission from the user."
+        },
+        {
+            "id": "USE_FULL_SCREEN_INTENT",
+            "constant": "android.permission",
+            "description_vi": "Bắt buộc đối với nhắm mục tiêu ứng dụng Build.VERSION_CODES.Qmuốn sử dụng notification full screen intents.",
+            "description_en": "Required for apps targeting Build.VERSION_CODES.Q that want to use notification full screen intents."
+        },
+        {
+            "id": "USE_ICC_AUTH_WITH_DEVICE_IDENTIFIER",
+            "constant": "android.permission",
+            "description_vi": "Cho phép đọc số nhận dạng thiết bị và sử dụng xác thực dựa trên ICC như EAP-AKA.",
+            "description_en": "Allows to read device identifiers and use ICC based authentication like EAP-AKA."
+        },
+        {
+            "id": "USE_SIP",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sử dụng dịch vụ SIP.",
+            "description_en": "Allows an application to use SIP service."
+        },
+        {
+            "id": "UWB_RANGING",
+            "constant": "android.permission",
+            "description_vi": "Bắt buộc phải có khả năng phủ sóng tới các thiết bị sử dụng băng thông siêu rộng.",
+            "description_en": "Required to be able to range to devices using ultra-wideband."
+        },
+        {
+            "id": "VIBRATE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép truy cập vào máy rung.",
+            "description_en": "Allows access to the vibrator."
+        },
+        {
+            "id": "WAKE_LOCK",
+            "constant": "android.permission",
+            "description_vi": "Cho phép sử dụng PowerManager WakeLocks để ngăn bộ xử lý ở chế độ ngủ hoặc màn hình không bị mờ.",
+            "description_en": "Allows using PowerManager WakeLocks to keep processor from sleeping or screen from dimming."
+        },
+        {
+            "id": "WRITE_APN_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi cài đặt apn và đọc các trường nhạy cảm của cài đặt apn hiện có như người dùng và mật khẩu.",
+            "description_en": "Allows applications to write the apn settings and read sensitive fields of an existing apn settings like user and password."
+        },
+        {
+            "id": "WRITE_CALENDAR",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi dữ liệu lịch của người dùng.",
+            "description_en": "Allows an application to write the user's calendar data."
+        },
+        {
+            "id": "WRITE_CALL_LOG",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi (nhưng không đọc) dữ liệu nhật ký cuộc gọi của người dùng.",
+            "description_en": "Allows an application to write (but not read) the user's call log data."
+        },
+        {
+            "id": "WRITE_CONTACTS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi dữ liệu danh bạ của người dùng.",
+            "description_en": "Allows an application to write the user's contacts data."
+        },
+        {
+            "id": "WRITE_EXTERNAL_STORAGE",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi vào bộ nhớ ngoài.",
+            "description_en": "Allows an application to write to external storage."
+        },
+        {
+            "id": "WRITE_GSERVICES",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi bản đồ dịch vụ của Google.",
+            "description_en": "Allows an application to modify the Google service map."
+        },
+        {
+            "id": "WRITE_SECURE_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc hoặc ghi cài đặt hệ thống an toàn.",
+            "description_en": "Allows an application to read or write the secure system settings."
+        },
+        {
+            "id": "WRITE_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng đọc hoặc ghi cài đặt hệ thống.",
+            "description_en": "Allows an application to read or write the system settings."
+        },
+        {
+            "id": "WRITE_SYNC_SETTINGS",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng ghi cài đặt đồng bộ hóa.",
+            "description_en": "Allows applications to write the sync settings."
+        },
+        {
+            "id": "WRITE_VOICEMAIL",
+            "constant": "android.permission",
+            "description_vi": "Cho phép ứng dụng sửa đổi và xóa thư thoại hiện có trong hệ thống.",
+            "description_en": "Allows an application to modify and remove existing voicemails in the system."
+        }
+    ]
+}

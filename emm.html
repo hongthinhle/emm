@@ -10,18 +10,26 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
 
     <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
-	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
+    <!-- jQuery UI - v1.13.0 -->
+	<link href="./res/css/jquery-ui.css" rel="stylesheet">
+    <script src="./res/js/jquery-ui.js"></script>
+
+    <link href="./res/select2@4.0.13/css/select2.css" rel="stylesheet" type="text/css" charset="utf-8">
+    <link href="./res/select2@4.0.13/css/select2.boostrap5.css" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="./res/select2@4.0.13/js/select2.js" type="text/javascript" charset="utf-8"></script>
+
 	<link href="/res/fontawesome/fontawesome.css" rel="stylesheet">
 	
-
 	<link href="/res/v2022-style.css" rel="stylesheet" type="text/css" charset="utf-8">
 	<link href="/res/v2022-size.css" rel="stylesheet" type="text/css" charset="utf-8">
     <script src="/res/v2022-style.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./res/js/scripts.js" type="text/javascript" charset="utf-8"></script>
 
     <style media="screen">
 	  .sticky {
@@ -41,18 +49,57 @@
 		.section-h100-s56{
 			height: calc(100vh - 56px);
 		}
+
+        /*Dialog jQueryUI*/
+
+        .ui-dialog .ui-dialog-titlebar {
+            color: #2980b9;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+            font-weight: 560!important;
+            font-size: 16px;
+        }
+
+        .ui-dialog-titlebar .ui-dialog-titlebar-close {
+            color: #fff!important;
+        }
+
+        .ui-dialog .ui-dialog-buttonpane {
+            padding: .3em!important;
+        }
+
+        .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+            height: 45px;
+            width: 100%;
+            position: relative;
+            padding: .3em 0;
+            text-align: center;
+        }
+
+        .ui-dialog .ui-dialog-buttonpane button {
+            margin: 0!important;
+        }
+
+        .ui-widget.ui-widget-content {
+            border: 1px solid #2980b9;
+        }
+        .ui-widget-overlay{
+            opacity: 0.6 !important;
+            filter: Alpha(Opacity=70) !important;
+            background: rgb(50, 50, 50) !important;
+        }
     </style>
 
     <script src="/res/js/emm_script.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/res/js/emmsolution.js" type="text/javascript" charset="utf-8"></script>
+    
   </head>
   <body id="emm-body" hidden=true>
     <script>
         var config = {
-            apiKey: "AIzaSyBDertcdRKaMypKdoLxCA5DtIaZHfEeVxM",
-            authDomain: "chingluhgroupemm.firebaseapp.com",
+            apiKey: "AIzaSyDA30Pu9H-4DzHFbPOpN_NPb0UBvJDDDGI",
+            authDomain: "chingluhgroup-emm.firebaseapp.com",
             // databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-            projectId: "chingluhgroupemm",
+            projectId: "chingluhgroup-emm",
             // storageBucket: "<BUCKET>.appspot.com",
             messagingSenderId: "237937338576",
         };
@@ -62,8 +109,38 @@
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
+      /**
+       * Sample JavaScript code for androidmanagement.enterprises.devices.list
+       * See instructions for running APIs Explorer code samples locally:
+       * https://developers.google.com/explorer-help/code-samples#javascript
+       */
+
+        // function authenticate() {
+        //     return gapi.auth2.getAuthInstance()
+        //         .signIn({scope: "https://www.googleapis.com/auth/androidmanagement"})
+        //         .then(function() { console.log("Sign-in successful"); },
+        //             function(err) { console.error("Error signing in", err); });
+        // }
+        // function loadClient() {
+        //     gapi.client.setApiKey("AIzaSyBMdeog01FfElba6axOKCU2_EDzKyHa9ak");
+        //     return gapi.client.load("https://androidmanagement.googleapis.com/$discovery/rest?version=v1")
+        //         .then(function() { console.log("GAPI client loaded for API"); },
+        //             function(err) { console.error("Error loading GAPI client for API", err); });
+        // }
+        // // Make sure the client is loaded and sign-in is complete before calling this method.
+        // function execute() {
+        //     return gapi.client.androidmanagement.enterprises.devices.list({
+        //         "parent": "enterprises/LC01tmuh69",
+        //         "pageSize": 20
+        //     })
+        //         .then(function(response) {
+        //                 // Handle the results here (response.result has the parsed body).
+        //                 console.log("Response", response);
+        //             },
+        //             function(err) { console.error("Execute error", err); });
+        // }
         gapi.load("client:auth2", function() {
-            gapi.auth2.init({client_id: "459934502496-prpgktc8kdgrnb3t3sakoi8gc4at6nao.apps.googleusercontent.com"});
+            gapi.auth2.init({client_id: "824034991696-rgsf5kd8lcvkoreokn4lgiktuf9amhbf.apps.googleusercontent.com"});
         });
     </script>
 		<div id="wrapper" class="clg-wrapper">
@@ -92,8 +169,8 @@
                             <a class="logo-open" href="#">
                                 <div class="logo-content">
                                     <img src="/res/images/Chingluh_Primary_2.png" alt="Chingluh Logo">
-                                    <div class="app-title">Ching Luh Group - EMM</div>
-                                    <div class="app-email">hongthinh.le@chingluh.com</div>
+                                    <div class="app-title">PCC Information Center</div>
+                                    <div class="app-email">pccinfo@chingluh.com</div>
                                 </div>
                             </a>
                             <div class="logo-close">
@@ -157,35 +234,49 @@
                         <div class="content-pane clg-p1rem">
                             <div class="h-100 row m-0">
                                 <div class="h-100 col-5">
-                                    <div class="h-200px clg-container-button">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="input-group input-group-sm mb-3 w-100">
+                                    <div class="h-200px">
+                                        <div class="h-42px row">
+                                            <div class="h-100 col-6 ps-0">
+                                                <div class="input-group input-group-sm mb-2 w-100">
                                                     <button class="btn btn-outline-primary btn-sm w-50"
                                                     onclick="EMM_Solution_JSClass.EMM_Policies_GetALL()">
-                                                        <i class="fa-duotone fa-arrows-rotate"></i> Refresh
+                                                        <i class="fa-duotone fa-arrows-rotate"></i> Get Policies
                                                     </button>
                                                     <button class="btn btn-outline-primary btn-sm w-50"><i class="fa-duotone fa-shield-plus"></i> Add Policie</button>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
-                                                <div class="input-group input-group-sm mb-3">
+                                            <div class="h-100 col-6 pe-0">
+                                                <div class="input-group input-group-sm mb-2">
                                                     <label class="input-group-text" for="emm-policies-list">Policie:</label>
                                                     <select class="form-select" id="emm-policies-list" onchange="EMM_Solution_JSClass.EMM_Policies_Select()">
-                                                        <option selected>Choose...</option>
+                                                        <option value="" selected>Choose...</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
-                                                <span class="text-center">Device Owner Lock Screen Info</span>
-                                                <div class="input-group-sm mb-3">
-                                                    <textarea class="form-control emm-policy-input" emm-policy-fields="deviceOwnerLockScreenInfo" id="policy-deviceOwnerLockScreenInfo" rows="3" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                        </div>
+                                        <div class="hs-100pe-42px row">
+                                            <div class="h-100 col-6 ps-0">
+                                                <div class="h-100 clg-container-list">
+                                                    <div class="title">
+                                                        Device Owner Lock Screen Info
+                                                    </div>
+                                                    <div class="content-auto border-0 rounded p-0">
+                                                        <div class="input-group-sm">
+                                                            <textarea class="form-control border emm-policy-input pt-2" style="height: 140px;max-height: 140px" emm-policy-fields="deviceOwnerLockScreenInfo" id="policy-deviceOwnerLockScreenInfo" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
-                                                <span class="text-center">Short Support Message</span>
-                                                <div class="input-group-sm mb-3">
-                                                    <textarea class="form-control emm-policy-input" emm-policy-fields="shortSupportMessage" id="policy-shortSupportMessage" rows="3" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                            <div class="h-100 col-6 pe-0">
+                                                <div class="h-100 clg-container-list">
+                                                    <div class="title">
+                                                        Short Support Message
+                                                    </div>
+                                                    <div class="content-auto border-0 rounded p-0">
+                                                        <div class="input-group-sm">
+                                                            <textarea class="form-control border emm-policy-input pt-2" style="height: 140px;max-height: 140px" emm-policy-fields="shortSupportMessage" id="policy-shortSupportMessage" oninput="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_defaultMessage(this)"></textarea>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,16 +298,15 @@
                                             </div>
                                             <div class="col ">
                                                 <div class="input-group input-group-sm mb-2">
-                                                    <label class="input-group-text" for="policy-passwordRequirements">Password:</label>
-                                                    <div class="input-group-text">
-                                                        <input class="form-check-input mt-0" type="checkbox" id="policy-passwordRequirements">
-                                                    </div>
-                                                    <select class="form-select policy-select" id="policy-passwordMinimumLength">
+                                                    <label class="input-group-text">Password:</label>
+                                                    <select class="form-select policy-select" id="policy-passwordMinimumLength"
+                                                    onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_passwordRequirements()">
                                                         <option value="6" selected>6</option>
                                                         <option value="7">7</option>
                                                         <option value="8">8</option>
                                                     </select>
-                                                    <select class="form-select policy-select w-160px" id="policy-passwordQuality">
+                                                    <select class="form-select policy-select w-160px" id="policy-passwordQuality"
+                                                    onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_passwordRequirements()">
                                                         <option value="ALPHABETIC" selected>ALPHABETIC</option>
                                                         <option value="ALPHANUMERIC">ALPHANUMERIC</option>
                                                     </select>
@@ -227,8 +317,8 @@
                                                 <label class="form-check-label" for="policy-factoryResetDisabled">Factory Reset Disabled</label>
                                             </div>
                                             <div class="col form-check form-switch">
-                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="cameraAccess" type="checkbox" role="switch" id="policy-cameraAccess">
-                                                <label class="form-check-label" for="policy-cameraAccess">Camera Access</label>
+                                                <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="cameraDisabled" type="checkbox" role="switch" id="policy-cameraDisabled">
+                                                <label class="form-check-label" for="policy-cameraDisabled">Camera Disabled</label>
                                             </div>
                                             <div class="col form-check form-switch">
                                                 <input class="form-check-input emm-policy-input" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_Switch(this)" emm-policy-fields="screenCaptureDisabled" type="checkbox" role="switch" id="policy-screenCaptureDisabled">
@@ -357,32 +447,41 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="h-100 col-7">
+                                <div class="h-100 col-7 pe-0">
                                     <div class="h-50px clg-container-button">
                                         <div class="input-group input-group-sm mb-3">
-                                            <button class="btn btn-outline-success btn-sm"><i class="fa-brands fa-android"></i> Add App</button>
+                                            <button class="btn btn-outline-success btn-sm"
+                                            onclick="EMM_Solution_JSClass.EMM_Policies_Applications_Add()"><i class="fa-brands fa-android"></i> Add Application</button>
                                             <label class="input-group-text" for="emm-policies-applications-list">Application:</label>
                                             <select class="form-select" id="emm-policies-applications-list"
                                             onchange="EMM_Solution_JSClass.EMM_Policies_Applications_Select()">
-                                                <option selected>Choose...</option>
+                                                <option value="" selected>Choose...</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="row h-290px">
-                                        <div class="h-100 col-6">
-                                            <div class="h-100 clg-container-list">
+                                    <div class="row h-210px">
+                                        <div class="h-100 col-5">
+                                            <div class="h-40px row m-0">
+                                                <div class="col-12 ps-0 pe-0">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text" class="form-control policy-individual-input" id="policy-individual-packageName" readonly>
+                                                        <button class="btn btn-outline-danger btn-sm" 
+                                                        id="emm-policies-applications-remove-btn" disabled
+                                                        onclick="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_Remove()">
+                                                            <i class="fa-solid fa-xmark"></i> Remove App
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hs-100pe-40px clg-container-list">
                                                 <div class="title">
                                                     Application Policy
                                                 </div>
-                                                <div class="content-auto border rounded mb-3">
-                                                    <div class="input-group input-group-sm mb-2">
-                                                        <span class="input-group-text">Package Name:</span>
-                                                        <input type="text" class="form-control policy-individual-input" id="policy-individual-packageName" readonly>
-                                                    </div>
-                                                                                                        
+                                                <div class="content-auto border rounded mb-3">                                           
                                                     <div class="input-group input-group-sm mb-2">
                                                         <label class="input-group-text w-180px" for="policy-individual-installType">Install Type:</label>
-                                                        <select class="form-select policy-individual-select" id="policy-individual-installType">
+                                                        <select class="form-select policy-individual-select" disabled
+                                                        id="policy-individual-installType" onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_InstallType()">
                                                             <option value="" selected></option>
                                                             <option value="INSTALL_TYPE_UNSPECIFIED">INSTALL_TYPE_UNSPECIFIED</option>
                                                             <option value="PREINSTALLED">PREINSTALLED</option>
@@ -395,7 +494,8 @@
                                                     </div>
                                                     <div class="input-group input-group-sm mb-2">
                                                         <label class="input-group-text w-180px" for="policy-individual-defaultPermissionPolicy">Default Permission Policy:</label>
-                                                        <select class="form-select policy-individual-select" id="policy-individual-defaultPermissionPolicy">
+                                                        <select class="form-select policy-individual-select" disabled id="policy-individual-defaultPermissionPolicy"
+                                                        onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_DefaultPermissionPolicy()">
                                                             <option value="" selected></option>
                                                             <option value="PERMISSION_POLICY_UNSPECIFIED">PERMISSION_POLICY_UNSPECIFIED</option>
                                                             <option value="PROMPT">PROMPT</option>
@@ -403,9 +503,9 @@
                                                             <option value="DENY">DENY</option>
                                                         </select>
                                                     </div>
-                                                    <div class="input-group input-group-sm mb-3">
+                                                    <div class="input-group input-group-sm">
                                                         <label class="input-group-text w-180px" for="policy-individual-delegatedScopes">Delegated Scopes:</label>
-                                                        <select class="form-select policy-individual-select" id="policy-individual-delegatedScopes">
+                                                        <select class="form-select policy-individual-select" disabled id="policy-individual-delegatedScopes">
                                                             <option value="" selected></option>
                                                             <option value="DELEGATED_SCOPE_UNSPECIFIED">DELEGATED_SCOPE_UNSPECIFIED</option>
                                                             <option value="CERT_INSTALL">CERT_INSTALL</option>
@@ -416,25 +516,23 @@
                                                             <option value="ENABLE_SYSTEM_APP">ENABLE_SYSTEM_APP</option>
                                                         </select>
                                                     </div>
-                                                    <div class="row m-0">
-                                                        <div class="col-6">
-                                                            <div class="form-check form-switch mb-3">
-                                                                <input class="form-check-input policy-individual-input" type="checkbox" role="switch" id="policy-individual-disabled">
-                                                                <label class="form-check-label" for="policy-individual-disabled">Disabled</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="form-check form-switch mb-3">
-                                                                <input class="form-check-input policy-individual-input" type="checkbox" role="switch" id="policy-individual-permissionGrants">
-                                                                <label class="form-check-label" for="policy-individual-permissionGrants">Permission Grant</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="h-100 col-6">
-                                            <div class="h-100 clg-container-list">
+                                        <div class="h-100 col-7">
+                                            <div class="h-40px row m-0">
+                                                <div class="col-8">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input policy-individual-input" type="checkbox" role="switch" id="policy-individual-permissionGrants" disabled
+                                                        onchange="EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_PermisionActive()">
+                                                        <label class="form-check-label" for="policy-individual-permissionGrants">Permission Grant Active</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4 pe-0">
+                                                    <button class="btn btn-outline-success btn-sm w-100" disabled id="policy-individual-permissionGrants-add" onclick="EMM_Solution_JSClass.EMM_Policies_Applications_Permission_Add()"><i class="fa-duotone fa-shield-plus"></i> Add Permission</button>
+                                                </div>
+                                            </div>
+                                            <div class="hs-100pe-40px clg-container-list">
                                                 <div class="title">
                                                     Permission Grants
                                                 </div>
@@ -443,36 +541,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="hs-100pe-390px clg-container-list">
+                                    <div class="hs-100pe-310px clg-container-list">
                                         <div class="title">
                                             Application Policy - JSON representation
                                         </div>
                                         <div class="content-auto border rounded" id="emm-policies-preview-json">
                                         </div>
                                     </div>
-                                    <div class="h-50px clg-container-button pt-3">
+                                    <div class="h-50px clg-container-button pt-3 text-center">
                                         <div class="input-group input-group-sm mb-3- w-100 text-end">
-                                            <button class="btn btn-outline-success btn-sm w-200px"
-                                            onclick="EMM_Solution_JSClass.EMM_Policies_Preview()"><i class="fa-solid fa-airplay"></i> Preview</button>
-                                            <button class="btn btn-outline-primary btn-sm w-200px"><i class="fa-solid fa-paper-plane"></i> Update Policy</button>
+                                            <!-- <button class="btn btn-outline-success btn-sm w-200px"
+                                            onclick="EMM_Solution_JSClass.EMM_Policies_Preview()"><i class="fa-solid fa-airplay"></i> Preview</button> -->
+                                            <button class="btn btn-outline-primary btn-sm w-200px"
+                                            onclick="EMM_Solution_JSClass.EMM_Policies_UpdatePolicy()"><i class="fa-solid fa-paper-plane"></i> Update Policy</button>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="h-100 col-4">
-                                    <div class="h-50px clg-container-button">
-                                        <div class="input-group input-group-sm mb-3">
-                                            <button class="btn btn-outline-primary form-control" type="button"><i class="fa-duotone fa-paper-plane"></i> Patch</button>
-                                        </div>
-                                    </div>
-                                    <div class="h-100-s50px clg-container-list">
-                                        <div class="title">
-                                            Policy - JSON representation
-                                        </div>
-                                        <div class="content-auto border rounded">
-                                            
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -491,7 +575,7 @@
                                             </button>
                                             <label class="input-group-text" for="emm-devices-list">Device:</label>
                                             <select class="form-select" id="emm-devices-list" onchange="EMM_Solution_JSClass.EMM_Devices_Select()">
-                                                <option selected>Choose...</option>
+                                                <option value="" selected>Choose...</option>
                                             </select>
                                         </div>
                                     </div>
@@ -742,6 +826,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="/res/js/emmsolution.js" type="text/javascript" charset="utf-8"></script>
 		<script>
             const CLG_Toast_Class = new CLG_Toast("");
             const CLG_Navigation_Class = new CLG_Navigation();

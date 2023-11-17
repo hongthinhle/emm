@@ -4,45 +4,127 @@ class EMM_Solution {
         options = { ...defaultOptions, ...options };
 
         var _this = this;
-        const enterprises_id = "enterprises/LC02ws9mr1";
+        const enterprises_id = "enterprises/LC01tmuh69";
+        var var_json_policie = [];
+        var var_policie_select;
 
-        const temp_permissionGrant = "<div class='input-group input-group-sm mb-3'>\n    <div class='input-group-text'>\n        <input class='form-check-input mt-0' type='checkbox' id='%id%-select' %checked%>\n    </div>\n    <input type='text' class='form-control' value='%permission%' id='%id%-permission'>\n    <select class='form-select w-40px' id='%id%-policy'>%policy%</select>\n</div>";
+        const temp_permissionGrant = "<div class='input-group input-group-sm mb-3'>\n    <div class='input-group-text w-15pe'>\n        <input class='form-check-input mt-0 emm-policie-app-permission' emm-app-permission='%permission%' type='checkbox' id='%permission_id%-check' %checked%  onclick='EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_Permision_Item()'>\n    <label class='form-check-label ms-1' for='%permission_id%-check'> active</label></div>\n    <span  class='input-group-text w-65pe' for='%permission_id%-check'> %permission%</span>    <select class='form-select' id='%permission_id%-policy' onchange='EMM_Solution_JSClass.EMM_Policies_Refresh_JSON_App_Permision_Item()'>%policy%</select>\n</div>";
         
+        this.initialization_dialog = (dialog_info, _params) => {
+            // Add data from params
+            let new_body = dialog_info.body.replace(/%id%/g, dialog_info.id);
+            jQuery('<div>', {
+                id: dialog_info.id,
+                class: dialog_info.class,
+                style: dialog_info.style,
+                html: new_body,
+            }).appendTo('body');
+    
+            $('#'+dialog_info.id)
+                .dialog(dialog_info.config)
+                .on('dialogclose', function (_event) {
+                    $('#'+dialog_info.id).remove();
+                });
+            
+            $('#'+dialog_info.id+' .dialog-close').on('click', function(){
+                $('#'+dialog_info.id)
+                    .dialog("close")
+                    .remove();
+            })
+    
+            $('.ui-dialog .ui-dialog-titlebar .ui-dialog-title').html(dialog_info.title);
+            
+            let arr_pe = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+            arr_pe.forEach(pe => {
+                for (let px = 1; px < 501; px++) {
+                    $('.'+dialog_info.id+'-select2.s2-'+pe+'pe-'+px+'px').select2({
+                        theme: 'bootstrap5',
+                        width: 'calc('+pe+'% - '+px+'px)',
+                        placeholder: $(this).data('placeholder'),
+                        allowClear: Boolean($(this).data('allow-clear')),
+                        closeOnSelect: !$(this).attr('multiple'),
+                    });
+                    $('.'+dialog_info.id+'-select2.s2-'+pe+'pe-'+px+'px.s2-title').select2({
+                        theme: 'bootstrap5',
+                        width: 'calc('+pe+'% - '+px+'px)',
+                        placeholder: $(this).data('placeholder'),
+                        allowClear: Boolean($(this).data('allow-clear')),
+                        closeOnSelect: !$(this).attr('multiple'),
+                        templateResult: _this.formatOption,
+                    });
+                }
+            });
+        }
+        this.formatOption = (option) => {
+            var $option = $(
+            '<div><strong>' + option.text + '</strong></div><span class="font-code">' + option.title + '</span>'
+            );
+            return $option;
+        };
+
         this.init = () => {
             $.getJSON("/res/js/emmsolution.json")
             .done((json) => {
                 options.config_json = json;
             });
+            $.getJSON("/res/js/android.permission.json")
+            .done((json) => {
+                options.android_permission = json;
+            });
 
             /* Đăng nhập ứng dụng */
-            // _this.GAPI_Authenticate(_this.GAPI_LoadClient());
-
+            _this.GAPI_Authenticate(_this.GAPI_LoadClient());
         };
 
-        this.GAPI_Authenticate = () => {
-            return gapi.auth2.getAuthInstance()
-                .signIn({scope: "https://www.googleapis.com/auth/androidmanagement"})
-                .then(function() { console.log("Sign-in successful"); },
-                    function(err) { console.error("Error signing in", err); });
-        }
-        
         this.GAPI_LoadClient = () => {
-            gapi.client.setApiKey("AIzaSyBDertcdRKaMypKdoLxCA5DtIaZHfEeVxM");
+            gapi.client.setApiKey("AIzaSyBMdeog01FfElba6axOKCU2_EDzKyHa9ak");
             return gapi.client.load("https://androidmanagement.googleapis.com/$discovery/rest?version=v1")
                 .then(function() { console.log("GAPI client loaded for API"); },
                     function(err) { console.error("Error loading GAPI client for API", err); });
         }
 
-        this.GAPI_Policies_GetSize = (pageSize) => {
+        this.GAPI_Authenticate = () => {
+            return gapi.auth2.getAuthInstance()
+                .signIn({scope: "https://www.googleapis.com/auth/androidmanagement"})
+                .then(
+                    function() { 
+                        console.log("Sign-in successful"); 
+                    },
+                    function(err) { 
+                        console.error("Error signing in", err); 
+                    });
+        }
+        
+        this.GAPI_Policies_GetSize = (pageSize, callback) => {
             return gapi.client.androidmanagement.enterprises.policies.list({
                 "parent": enterprises_id,
                 "pageSize": pageSize
             })
             .then(function(response) {
                     // Handle the results here (response.result has the parsed body).
-                    console.log(response["result"]["policies"]);
-
-                    // emm-policies-list
+                    callback(response["result"]["policies"]);
+                },
+                function(err) { console.error("Execute error", err); });
+        }
+        this.GAPI_Policies_GetByPolicyName = (policyName, callback) => {
+            return gapi.client.androidmanagement.enterprises.policies.get({
+                "name": policyName
+            })
+            .then(function(response) {
+                    // Handle the results here (response.result has the parsed body).
+                    callback(response);
+                },
+                function(err) { console.error("Execute error", err); });
+        }
+        this.GAPI_Policies_Patch = (policyName, resourcePolicy, callback) => {
+            console.log(policyName, resourcePolicy);
+            return gapi.client.androidmanagement.enterprises.policies.patch({
+                "name": policyName,
+                "resource": resourcePolicy
+            })
+            .then(function(response) {
+                    // Handle the results here (response.result has the parsed body).
+                    callback(response);
                 },
                 function(err) { console.error("Execute error", err); });
         }
@@ -52,10 +134,23 @@ class EMM_Solution {
         }
         this.EMM_Policies_GetALL = () => {
             // Make sure the client is loaded and sign-in is complete before calling this method.
-            // _this.GAPI_Policies_GetSize(20);
+            // _this.GAPI_Policies_GetSize(20, function(policies){
+            //     if(null!=policies){
+            //         options.config_json.policies = policies;
+            //         let policies_html = "<option selected>Choose...</option>";
+    
+            //         policies.forEach(policie => {
+            //             const policie_arr_name = policie["name"].split("/");
+            //             policies_html += '<option value="'+policie["name"]+'">'+policie_arr_name[policie_arr_name.length-1]+'</option>';
+            //         });
+            //         $('#emm-policies-list').html(policies_html);
+
+            //         console.log(policies);
+            //     }
+            // });
             // console.log(options.config_json.devices);
             let policies = options.config_json.policies;
-            let policies_html = "<option selected>Choose...</option>";
+            let policies_html = "<option value='' selected>Choose...</option>";
 
             policies.forEach(policie => {
                 const policie_arr_name = policie["name"].split("/");
@@ -63,10 +158,11 @@ class EMM_Solution {
             });
             $('#emm-policies-list').html(policies_html);
         }
+
         this.EMM_Devices_GetALL = () => {
             // Make sure the client is loaded and sign-in is complete before calling this method.
             let devices = options.config_json.devices;
-            let devices_html = "<option selected>Choose...</option>";
+            let devices_html = "<option value='' selected>Choose...</option>";
 
             devices.forEach(device => {
                 const device_arr_name = device["name"].split("/");
@@ -83,141 +179,528 @@ class EMM_Solution {
             $('#emm-devices-list').html(devices_html);
         }
 
-        this.EMM_Policies_Select = () => {
-            
-
-            let policie_id = $('#emm-policies-list').val();
-            let policies = options.config_json.policies;
-            
-            let element = document.querySelectorAll('.emm-policy-input');
-            for (let z = 0; z < element.length; z++) {
-                if (typeof(element[z]) != 'undefined' && element[z] != null){
-                    element[z].checked = false;
+        this.EMM_Policies_UpdatePolicy = () => {
+            if(''!=var_policie_select){
+                if(confirm("Do you want update the policy?")){
+                    _this.GAPI_Policies_Patch(
+                        var_json_policie[var_policie_select]['name'],
+                        var_json_policie[var_policie_select],
+                        function(response){
+                            let police_data = response['result'];
+                            var_json_policie[var_policie_select] = police_data;
+                        }
+                    );
+                    CLG_Toast_Class.success(
+                        "Policies | Update the policy",
+                        "Successfully.",
+                        4000
+                    );
                 }
+            } else {
+                CLG_Toast_Class.warning(
+                    "Policies | Update the policy",
+                    "Please select policy first.",
+                    4000
+                );
             }
-            policies.forEach(policie => {
-                if(policie_id==policie["name"]){
-                    /* Set Policie has been selected to options.json_policie */
-                    
-                    options.json_policie = policie;
-                    _this.EMM_Policies_Preview();
+        }
 
-                    let shortSupportMessage = policie["shortSupportMessage"];
-                    let deviceOwnerLockScreenInfo = policie["deviceOwnerLockScreenInfo"];
-                    let element_shortSupportMessage = document.getElementById('policy-shortSupportMessage');
-                    let element_deviceOwnerLockScreenInfo = document.getElementById('policy-deviceOwnerLockScreenInfo');
+        this.EMM_Policies_Select = () => {
+            let policie_id = $('#emm-policies-list').val();
+            // let policies = options.config_json.policies;
+            
+            if(''!=policie_id){
+                $('#emm-policies-applications-list').val('');
+                $('#emm-policies-applications-list').trigger('change');
 
-                    if(typeof(shortSupportMessage) != 'undefined' && shortSupportMessage != null){
-                        element_shortSupportMessage.value = shortSupportMessage["defaultMessage"]
-                    } else {
-                        element_shortSupportMessage.value = "";
+                let element = document.querySelectorAll('.emm-policy-input');
+                for (let z = 0; z < element.length; z++) {
+                    if (typeof(element[z]) != 'undefined' && element[z] != null){
+                        element[z].checked = false;
                     }
-                    if(typeof(deviceOwnerLockScreenInfo) != 'undefined' && deviceOwnerLockScreenInfo != null){
-                        element_deviceOwnerLockScreenInfo.value = deviceOwnerLockScreenInfo["defaultMessage"]
-                    } else {
-                        element_deviceOwnerLockScreenInfo.value = "";
-                    }
+                }
 
-                    for (const [key, value] of Object.entries(policie)) {
-                        let element_input = document.getElementById('policy-'+key);
-                        if (typeof(element_input) != 'undefined' && element_input != null){
-                            if(value){
-                                element_input.checked = true;
-                            } else {
-                                element_input.checked = false;
+                _this.GAPI_Policies_GetByPolicyName(
+                    policie_id, 
+                    function(response){
+                        let police_data = response['result'];
+
+                        let policy_package = police_data["name"].split("/");
+                        let policy_id = policy_package[policy_package.length-1];
+
+                        var_policie_select = policy_id;
+                        var_json_policie[policy_id] = police_data;
+
+                        _this.EMM_Policies_Preview();         
+
+                        let shortSupportMessage = police_data["shortSupportMessage"];
+                        let deviceOwnerLockScreenInfo = police_data["deviceOwnerLockScreenInfo"];
+                        let element_shortSupportMessage = document.getElementById('policy-shortSupportMessage');
+                        let element_deviceOwnerLockScreenInfo = document.getElementById('policy-deviceOwnerLockScreenInfo');
+
+                        if(typeof(shortSupportMessage) != 'undefined' && shortSupportMessage != null){
+                            element_shortSupportMessage.value = shortSupportMessage["defaultMessage"]
+                        } else {
+                            element_shortSupportMessage.value = "";
+                        }
+                        if(typeof(deviceOwnerLockScreenInfo) != 'undefined' && deviceOwnerLockScreenInfo != null){
+                            element_deviceOwnerLockScreenInfo.value = deviceOwnerLockScreenInfo["defaultMessage"]
+                        } else {
+                            element_deviceOwnerLockScreenInfo.value = "";
+                        }
+
+                        for (const [key, value] of Object.entries(police_data)) {
+                            let element_input = document.getElementById('policy-'+key);
+                            if (typeof(element_input) != 'undefined' && element_input != null){
+                                if(value){
+                                    element_input.checked = true;
+                                } else {
+                                    element_input.checked = false;
+                                }
                             }
                         }
-                    }
 
-                    
-                    let applications_html = "<option selected>Choose...</option>";
-                    for (const [key, value] of Object.entries(policie["applications"])) {
-                        applications_html += '<option value="'+value["packageName"]+'">'+value["packageName"]+'</option>';
+                        let applications_html = "<option value='' selected>Choose...</option>";
+                        for (const [key, value] of Object.entries(police_data["applications"])) {
+                            applications_html += '<option value="'+value["packageName"]+'">'+value["packageName"]+'</option>';
+                        }
+                        $('#emm-policies-applications-list').html(applications_html);
                     }
-                    $('#emm-policies-applications-list').html(applications_html);
-                }
-            });
+                );
+            }
+
+            // let element = document.querySelectorAll('.emm-policy-input');
+            // for (let z = 0; z < element.length; z++) {
+            //     if (typeof(element[z]) != 'undefined' && element[z] != null){
+            //         element[z].checked = false;
+            //     }
+            // }
+
+            // policies.forEach(policie => {
+            //     if(policie_id==policie["name"]){
+
+            //         let policy_package = policie["name"].split("/");
+            //         let policy_id = policy_package[policy_package.length-1];
+
+            //         var_policie_select = policy_id;
+            //         var_json_policie[policy_id] = policie;
+
+            //         _this.EMM_Policies_Preview();         
+
+            //         let shortSupportMessage = policie["shortSupportMessage"];
+            //         let deviceOwnerLockScreenInfo = policie["deviceOwnerLockScreenInfo"];
+            //         let element_shortSupportMessage = document.getElementById('policy-shortSupportMessage');
+            //         let element_deviceOwnerLockScreenInfo = document.getElementById('policy-deviceOwnerLockScreenInfo');
+
+            //         if(typeof(shortSupportMessage) != 'undefined' && shortSupportMessage != null){
+            //             element_shortSupportMessage.value = shortSupportMessage["defaultMessage"]
+            //         } else {
+            //             element_shortSupportMessage.value = "";
+            //         }
+            //         if(typeof(deviceOwnerLockScreenInfo) != 'undefined' && deviceOwnerLockScreenInfo != null){
+            //             element_deviceOwnerLockScreenInfo.value = deviceOwnerLockScreenInfo["defaultMessage"]
+            //         } else {
+            //             element_deviceOwnerLockScreenInfo.value = "";
+            //         }
+
+            //         for (const [key, value] of Object.entries(policie)) {
+            //             let element_input = document.getElementById('policy-'+key);
+            //             if (typeof(element_input) != 'undefined' && element_input != null){
+            //                 if(value){
+            //                     element_input.checked = true;
+            //                 } else {
+            //                     element_input.checked = false;
+            //                 }
+            //             }
+            //         }
+
+            //         let applications_html = "<option value='' selected>Choose...</option>";
+            //         for (const [key, value] of Object.entries(policie["applications"])) {
+            //             applications_html += '<option value="'+value["packageName"]+'">'+value["packageName"]+'</option>';
+            //         }
+            //         $('#emm-policies-applications-list').html(applications_html);
+            //     }
+            // });
+        }
+
+        this.EMM_Policies_Applications_Add = () => {
+            let policies_id = $('#emm-policies-list').val();
+            if(null!=policies_id && ''!=policies_id){
+                console.log(policies_id);
+                let dialog_info = options.config_json.dialog.policies.application_add_new;
+                _this.initialization_dialog(dialog_info, "");
+
+                $('#'+dialog_info.id+' .dialog-submit').on('click', function () {
+                    let new_application = $('#'+dialog_info.id+'-application-id').val();
+                    if(''!=new_application){
+                        $('#emm-policies-applications-list').append('<option value="'+new_application+'">'+new_application+'</option>');
+
+                        let application_new = [];
+
+                        for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                            application_new.push(value);
+                            console.log(value);
+                        }
+
+                        let new_content = {
+                            "packageName": new_application,
+                            "installType": "AVAILABLE"
+                        };
+
+                        application_new.push(new_content);
+
+                        var_json_policie[var_policie_select]["applications"] = application_new;
+                        $('#emm-policies-applications-list').val(new_application);
+                        $('#emm-policies-applications-list').trigger('change');
+                        _this.EMM_Policies_Preview();
+
+                        CLG_Toast_Class.success(
+                            "Application | Add New",
+                            "Successfully added application.",
+                            2000
+                        );
+
+                        $("#" + dialog_info.id)
+                            .dialog("close")
+                            .remove();
+                    } else {
+                        CLG_Toast_Class.warning(
+                            "Application | Add New",
+                            "Application_ID is not empty.",
+                            2000
+                        );
+                    }
+                });
+            } else {
+                CLG_Toast_Class.warning(
+                    "Application | Add New",
+                    "Please select policie.",
+                    4000
+                );
+            }
         }
 
         this.EMM_Policies_Applications_Select = () => {
-            let policie_id = $('#emm-policies-list').val();
+            // let policie_id = $('#emm-policies-list').val();
             let applications_id = $('#emm-policies-applications-list').val();
-            let policies = options.config_json.policies;
+            // let policies = options.config_json.policies;
+
+            let permision_active = $('#policy-individual-permissionGrants').is(':checked');
+            
+            if(''!=applications_id){
+                $('#emm-policies-applications-remove-btn').prop('disabled', false);
+                $('#policy-individual-installType').prop('disabled', false);
+                $('#policy-individual-defaultPermissionPolicy').prop('disabled', false);
+                $('#policy-individual-delegatedScopes').prop('disabled', false);
+                $('#policy-individual-permissionGrants').prop('disabled', false);
+            } else {
+                $('#emm-policies-applications-remove-btn').prop('disabled', true);
+                $('#policy-individual-installType').prop('disabled', true);
+                $('#policy-individual-defaultPermissionPolicy').prop('disabled', true);
+                $('#policy-individual-delegatedScopes').prop('disabled', true);
+                $('#policy-individual-permissionGrants').prop('disabled', true);
+                $('#policy-individual-permissionGrants-list').html('');
+            }
 
             $('.policy-individual-input').val("");
             $('.policy-individual-select').val("");
 
-            policies.forEach(policie => {
-                if(policie_id==policie["name"]){
-                    for (const [key, value] of Object.entries(policie["applications"])) {
-                        if(applications_id==value["packageName"]){
-                            for (const [key_app, value_app] of Object.entries(value)) {
-                                let element_input = document.getElementById('policy-individual-'+key_app);
-                                if (typeof(element_input) != 'undefined' && element_input != null){
-                                    element_input.value = value_app;
-                                }
+            if(''!=applications_id){
+                let policie = var_json_policie[var_policie_select];
+                for (const [key, value] of Object.entries(policie["applications"])) {
+                    if(applications_id==value["packageName"]){
+                        for (const [key_app, value_app] of Object.entries(value)) {
+                            let element_input = document.getElementById('policy-individual-'+key_app);
+                            if (typeof(element_input) != 'undefined' && element_input != null){
+                                element_input.value = value_app;
                             }
-
-                            
-                            let permissionGrants = value["permissionGrants"];
-                            let element_permissionGrants = document.getElementById('policy-individual-permissionGrants');
-                            if (typeof(permissionGrants) != 'undefined' && permissionGrants != null){
-                                element_permissionGrants.checked = true;
-
-                                let html_permissionGrant = temp_permissionGrant;
-                                let html_permissionGrant_list = "";
-                                let arr_policy = ['PROMPT', 'GRANT', 'DENY'];
-                                for (const [key_permission, value_permission] of Object.entries(permissionGrants)) {
-                                    html_permissionGrant = html_permissionGrant.replace(/%id%/g, applications_id);
-                                    html_permissionGrant = html_permissionGrant.replace(/%checked%/g, 'checked');
-                                    html_permissionGrant = html_permissionGrant.replace(/%permission%/g, value_permission["permission"]);
-
-                                    let policy_select = "";
-                                    arr_policy.forEach(item_policy => {
-                                        if(item_policy==value_permission["policy"]){
-                                            policy_select += "<option value='"+item_policy+"' selected>"+item_policy+"</option>";
-                                        } else {
-                                            policy_select += "<option value='"+item_policy+"'>"+item_policy+"</option>";
-                                        }
-                                    });
-
-                                    html_permissionGrant = html_permissionGrant.replace(/%policy%/g, policy_select);
-
-                                    html_permissionGrant_list += html_permissionGrant;
-                                }
-
-                                $('#policy-individual-permissionGrants-list').html(html_permissionGrant_list);
-                            } else {
-                                element_permissionGrants.checked = false;
-                                $('#policy-individual-permissionGrants-list').html("");
-                            }
-                            
                         }
-                    };
+                        
+                        let permissionGrants = value["permissionGrants"];
+                        let element_permissionGrants = document.getElementById('policy-individual-permissionGrants');
+                        if (typeof(permissionGrants) != 'undefined' && permissionGrants != null){
+                            element_permissionGrants.checked = true;
+                            let html_permissionGrant_list = "";
+                            let arr_policy = ['PROMPT', 'GRANT', 'DENY'];
+                            for (const [key_permission, value_permission] of Object.entries(permissionGrants)) {
+                                let html_permissionGrant = temp_permissionGrant;
+
+                                let permission_id = md5(applications_id+'-'+value_permission["permission"]);
+                                // permission_id = permission_id.replace(/android.permission./g, "");
+
+                                html_permissionGrant = html_permissionGrant.replace(/%id%/g, applications_id);
+                                html_permissionGrant = html_permissionGrant.replace(/%permission_id%/g, permission_id);
+                                html_permissionGrant = html_permissionGrant.replace(/%checked%/g, 'checked');
+                                html_permissionGrant = html_permissionGrant.replace(/%permission%/g, value_permission["permission"]);
+
+                                let policy_select = "";
+                                arr_policy.forEach(item_policy => {
+                                    if(item_policy==value_permission["policy"]){
+                                        policy_select += "<option value='"+item_policy+"' selected>"+item_policy+"</option>";
+                                    } else {
+                                        policy_select += "<option value='"+item_policy+"'>"+item_policy+"</option>";
+                                    }
+                                });
+
+                                html_permissionGrant = html_permissionGrant.replace(/%policy%/g, policy_select);
+
+                                html_permissionGrant_list += html_permissionGrant;
+                            }
+
+                            $('#policy-individual-permissionGrants-list').html(html_permissionGrant_list);
+                        } else {
+                            element_permissionGrants.checked = false;
+                            $('#policy-individual-permissionGrants-list').html("");
+                        }
+                        $('#policy-individual-permissionGrants').trigger('change');
+                        $('.policy-individual-input').val(applications_id);
+                    }
+                };
+            }
+        }
+
+        this.EMM_Policies_Applications_Permission_Add = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            if(''!=applications_id){
+                console.log(applications_id);
+                let dialog_info = options.config_json.dialog.policies.application_add_permission;
+                _this.initialization_dialog(dialog_info, "");
+    
+                let arr_permission_current = [];
+                for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                    if(applications_id==value["packageName"]){
+                        if (typeof(value["permissionGrants"]) != 'undefined' && value["permissionGrants"] != null){
+                            for (const [key_per, value_per] of Object.entries(value["permissionGrants"])) {
+                                arr_permission_current.push(value_per['permission']);
+                            }
+                        }
+                        break;
+                    }
                 }
-            });
+                
+                let permission_html = '';
+                for (const [key, value] of Object.entries(options.android_permission.Permission)) {
+                    let permission_id = value["constant"]+'.'+value["id"];
+                    let allow_select = '';
+                    let selected_note = '';
+                    if(arr_permission_current.includes(permission_id)){
+                        allow_select = 'disabled';
+                        selected_note = ' [Seleted]';
+                    }
+                    permission_html += '<option value="'+permission_id+'" '+allow_select+' title="'+value["description_en"]+'\n'+value["description_vi"]+'">'+value["id"]+selected_note+'</option>';
+                }
+                $('#'+dialog_info.id+'-permission').html(permission_html);
+
+                $('#'+dialog_info.id+' .dialog-submit').on('click', function () {
+                    let value_permission = $('#'+dialog_info.id+'-permission').val();
+                    let value_policy = $('#'+dialog_info.id+'-policy').val();
+
+                    for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                        if(applications_id==value["packageName"]){
+                            if (typeof(value["permissionGrants"]) != 'undefined' && value["permissionGrants"] != null){
+                                var_json_policie[var_policie_select]["applications"][key]["permissionGrants"].push({
+                                    "permission": value_permission,
+                                    "policy": value_policy
+                                });
+                            } else {
+                                $('#policy-individual-defaultPermissionPolicy').val('GRANT');
+                                $('#policy-individual-defaultPermissionPolicy').trigger('change');
+
+                                var_json_policie[var_policie_select]["applications"][key]["permissionGrants"] = [{
+                                    "permission": value_permission,
+                                    "policy": value_policy
+                                }];
+                            }
+                            break;
+                        }
+                    }
+                    _this.EMM_Policies_Refresh_JSON_App_Permision();
+                    _this.EMM_Policies_Preview();
+
+                    $("#" + dialog_info.id)
+                        .dialog("close")
+                        .remove();
+                });
+            } else {
+                CLG_Toast_Class.warning(
+                    "Application | Add Permission",
+                    "Please select application.",
+                    4000
+                );
+            }
         }
 
         this.EMM_Policies_Preview = () => {
-            let policie = options.json_policie;
+            let policie = var_json_policie[var_policie_select];
             let preview_html = '<code><pre>'+ JSON.stringify(policie, null, '  ') +'</pre></code>';
             $('#emm-policies-preview-json').html(preview_html);
         }
 
         this.EMM_Policies_Refresh_JSON_Switch = (element) => {
+            let applications_id = $('#emm-policies-applications-list').val();
             let key = $(element).attr('emm-policy-fields');
             let value = $(element).is(':checked');
 
-            options.json_policie[key] = value;
+            var_json_policie[var_policie_select][key] = value;
+            _this.EMM_Policies_Preview();
+        }
+
+        this.EMM_Policies_Refresh_JSON_passwordRequirements = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            let key = 'passwordRequirements';
+            var_json_policie[var_policie_select][key] = {
+                "passwordMinimumLength": $('#policy-passwordMinimumLength').val()*1,
+                "passwordQuality": $('#policy-passwordQuality').val()
+            };
             _this.EMM_Policies_Preview();
         }
 
         this.EMM_Policies_Refresh_JSON_defaultMessage = (element) => {
+            let applications_id = $('#emm-policies-applications-list').val();
             let key = $(element).attr('emm-policy-fields');
             let value = $(element).val();
-            options.json_policie[key]["defaultMessage"] = value;
+            var_json_policie[var_policie_select][key]["defaultMessage"] = value;
             _this.EMM_Policies_Preview();
         }
+
+        this.EMM_Policies_Refresh_JSON_App_Remove = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            if(''!=applications_id){
+                let application_new = [];
+
+                for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                    if(applications_id!=value["packageName"]){
+                        application_new.push(value);
+                    }
+                }
+
+                var_json_policie[var_policie_select]["applications"] = application_new;
+                $("#emm-policies-applications-list option[value='"+applications_id+"']").remove();
+                $('#emm-policies-applications-list').val('');
+                $('#emm-policies-applications-list').trigger('change');
+                _this.EMM_Policies_Preview();
+            } else {
+                CLG_Toast_Class.warning(
+                    "Application | Add Remove",
+                    "No applications are selected.",
+                    4000
+                );
+            }
+        }
+
+        this.EMM_Policies_Refresh_JSON_App_InstallType = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            if(''!=applications_id){
+                let installType = $('#policy-individual-installType').val();
+                for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                    if(applications_id==value["packageName"]){
+                        var_json_policie[var_policie_select]["applications"][key]["installType"] = installType;
+                        _this.EMM_Policies_Preview();
+                        break;
+                    }
+                }
+            }
+        }
+
+        this.EMM_Policies_Refresh_JSON_App_DefaultPermissionPolicy = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            if(''!=applications_id){
+                let defaultPermissionPolicy = $('#policy-individual-defaultPermissionPolicy').val();
+                for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                    if(applications_id==value["packageName"]){
+                        var_json_policie[var_policie_select]["applications"][key]["defaultPermissionPolicy"] = defaultPermissionPolicy;
+                        _this.EMM_Policies_Preview();
+                        break;
+                    }
+                }
+            }
+        }
+
+        this.EMM_Policies_Refresh_JSON_App_PermisionActive = () => {
+            let permision_active = $('#policy-individual-permissionGrants').is(':checked');
+            
+            if(permision_active){
+                $('#policy-individual-permissionGrants-add').prop('disabled', false);
+            } else {
+                $('#policy-individual-permissionGrants-add').prop('disabled', true);
+
+                $('#policy-individual-permissionGrants-list').html('');
+                _this.EMM_Policies_Refresh_JSON_App_Permision_Item();
+            }
+            _this.EMM_Policies_Refresh_JSON_App_Permision();
+        }
+
+        this.EMM_Policies_Refresh_JSON_App_Permision_Item = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            let arr_permission = [];
+            $('.emm-policie-app-permission').each(function(element) {
+                let permission_grant = $(this).attr('emm-app-permission');
+                let permission_id = md5(applications_id+"-"+permission_grant);
+
+                let permision_check = $('#'+permission_id+'-check').is(':checked');
+                if(permision_check){
+                    let permission_element = document.getElementById(permission_id+'-policy');
+                    arr_permission.push({
+                        "permission": permission_grant,
+                        "policy": permission_element.value
+                    });
+                }
+            });
+
+            for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                if(applications_id==value["packageName"]){
+                    if(''!=arr_permission){
+                        var_json_policie[var_policie_select]["applications"][key]["permissionGrants"] = arr_permission;
+                    } else {
+                        delete var_json_policie[var_policie_select]["applications"][key]["permissionGrants"];
+                    }
+                    break;
+                }
+            }
+            _this.EMM_Policies_Refresh_JSON_App_Permision();
+        }
+        
+        this.EMM_Policies_Refresh_JSON_App_Permision = () => {
+            let applications_id = $('#emm-policies-applications-list').val();
+            if(''!=applications_id){
+                for (const [key, value] of Object.entries(var_json_policie[var_policie_select]["applications"])) {
+                    if(applications_id==value["packageName"]){
+                        let html_permissionGrant_list = "";
+                        if (typeof(value["permissionGrants"]) != 'undefined' && value["permissionGrants"] != null){
+                            let arr_policy = ['PROMPT', 'GRANT', 'DENY'];
+                            for (const [key_permission, value_permission] of Object.entries(value["permissionGrants"])) {
+                                let html_permissionGrant = temp_permissionGrant;
+    
+                                let permission_id = md5(applications_id+'-'+value_permission["permission"]);
+    
+                                html_permissionGrant = html_permissionGrant.replace(/%id%/g, applications_id);
+                                html_permissionGrant = html_permissionGrant.replace(/%permission_id%/g, permission_id);
+                                html_permissionGrant = html_permissionGrant.replace(/%checked%/g, 'checked');
+                                html_permissionGrant = html_permissionGrant.replace(/%permission%/g, value_permission["permission"]);
+    
+                                let policy_select = "";
+                                arr_policy.forEach(item_policy => {
+                                    if(item_policy==value_permission["policy"]){
+                                        policy_select += "<option value='"+item_policy+"' selected>"+item_policy+"</option>";
+                                    } else {
+                                        policy_select += "<option value='"+item_policy+"'>"+item_policy+"</option>";
+                                    }
+                                });
+    
+                                html_permissionGrant = html_permissionGrant.replace(/%policy%/g, policy_select);
+    
+                                html_permissionGrant_list += html_permissionGrant;
+                            }
+                        }
+
+                        $('#policy-individual-permissionGrants-list').html(html_permissionGrant_list);
+                        _this.EMM_Policies_Preview();
+                        break;
+                    }
+                }
+            }
+        }
+        
 
         this.EMM_Devices_Select = () => {
             let device_id = $('#emm-devices-list').val();
@@ -235,610 +718,3 @@ class EMM_Solution {
         });
     }
 }
-
-/*
-{
-    "result": {
-        "policies": [
-            {
-                "name": "enterprises/LC01tmuh69/policies/clg-pcc-cellphone-smj260g",
-                "version": "2",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    }
-                ],
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            },
-            {
-                "name": "enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016",
-                "version": "4",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    }
-                ],
-                "screenCaptureDisabled": true,
-                "addUserDisabled": true,
-                "mountPhysicalMediaDisabled": true,
-                "bluetoothContactSharingDisabled": true,
-                "passwordRequirements": {
-                    "passwordMinimumLength": 6,
-                    "passwordQuality": "ALPHABETIC"
-                },
-                "bluetoothConfigDisabled": true,
-                "mobileNetworksConfigDisabled": true,
-                "outgoingBeamDisabled": true,
-                "smsDisabled": true,
-                "usbFileTransferDisabled": true,
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "bluetoothDisabled": true,
-                "privateKeySelectionEnabled": true,
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            },
-            {
-                "name": "enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord",
-                "version": "7",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.chingluhgroup.qrcodeattendancerecord",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    }
-                ],
-                "screenCaptureDisabled": true,
-                "addUserDisabled": true,
-                "mountPhysicalMediaDisabled": true,
-                "bluetoothContactSharingDisabled": true,
-                "passwordRequirements": {
-                    "passwordMinimumLength": 6,
-                    "passwordQuality": "ALPHABETIC"
-                },
-                "bluetoothConfigDisabled": true,
-                "mobileNetworksConfigDisabled": true,
-                "outgoingBeamDisabled": true,
-                "smsDisabled": true,
-                "usbFileTransferDisabled": true,
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "deviceOwnerLockScreenInfo": {
-                    "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "bluetoothDisabled": true,
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            },
-            {
-                "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh",
-                "version": "21",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.clockpackage",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.gallery3d",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.google.android.youtube",
-                        "installType": "AVAILABLE"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.zing.zalo",
-                        "installType": "FORCE_INSTALLED",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "DENY"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.takesampleimage",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.takeprofilepicture",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "DENY"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.cameraconnect",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.assetmanagement",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.approveddocuments",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.emmsolution",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT"
-                    }
-                ],
-                "factoryResetDisabled": true,
-                "shortSupportMessage": {
-                    "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "passwordRequirements": {
-                    "passwordMinimumLength": 6,
-                    "passwordQuality": "ALPHABETIC"
-                },
-                "cellBroadcastsConfigDisabled": true,
-                "mobileNetworksConfigDisabled": true,
-                "tetheringConfigDisabled": true,
-                "outgoingBeamDisabled": true,
-                "outgoingCallsDisabled": true,
-                "smsDisabled": true,
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "deviceOwnerLockScreenInfo": {
-                    "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "locationMode": "LOCATION_ENFORCED",
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            },
-            {
-                "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage",
-                "version": "8",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.clockpackage",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.gallery3d",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.youtube",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED",
-                        "managedConfiguration": {
-                            "URLBlocklist": [
-                                "*"
-                            ],
-                            "URLAllowlist": [
-                                "pccinfo.chingluh.com.vn",
-                                "172.16.16.70"
-                            ],
-                            "Recommended": [
-                                "pccinfo.chingluh.com.vn"
-                            ],
-                            "IncognitoModeAvailability": "1",
-                            "ForceGoogleSafeSearch": "true",
-                            "HomepageLocation": "https://pccinfo.chingluh.com.vn"
-                        }
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.takesampleimage",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.assetmanagement",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    },
-                    {
-                        "packageName": "chingluhgroup.ecosystem.approveddocuments",
-                        "installType": "AVAILABLE",
-                        "defaultPermissionPolicy": "GRANT",
-                        "permissionGrants": [
-                            {
-                                "permission": "android.permission.CAMERA",
-                                "policy": "GRANT"
-                            }
-                        ]
-                    }
-                ],
-                "screenCaptureDisabled": true,
-                "addUserDisabled": true,
-                "factoryResetDisabled": true,
-                "mountPhysicalMediaDisabled": true,
-                "modifyAccountsDisabled": true,
-                "bluetoothContactSharingDisabled": true,
-                "shortSupportMessage": {
-                    "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "passwordRequirements": {
-                    "passwordMinimumLength": 6,
-                    "passwordQuality": "ALPHABETIC"
-                },
-                "bluetoothConfigDisabled": true,
-                "cellBroadcastsConfigDisabled": true,
-                "mobileNetworksConfigDisabled": true,
-                "tetheringConfigDisabled": true,
-                "outgoingBeamDisabled": true,
-                "outgoingCallsDisabled": true,
-                "smsDisabled": true,
-                "usbFileTransferDisabled": true,
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "deviceOwnerLockScreenInfo": {
-                    "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "locationMode": "LOCATION_ENFORCED",
-                "bluetoothDisabled": true,
-                "privateKeySelectionEnabled": true,
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            },
-            {
-                "name": "enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom",
-                "version": "6",
-                "applications": [
-                    {
-                        "packageName": "com.google.android.googlequicksearchbox",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.gm",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.clockpackage",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.gallery3d",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.app.contacts",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.messaging",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.samsung.android.dialer",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.myfiles",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.sec.android.app.camera",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.youtube",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.google.android.apps.docs",
-                        "installType": "BLOCKED"
-                    },
-                    {
-                        "packageName": "com.adobe.reader",
-                        "installType": "FORCE_INSTALLED"
-                    },
-                    {
-                        "packageName": "com.android.chrome",
-                        "installType": "FORCE_INSTALLED",
-                        "managedConfiguration": {
-                            "URLBlocklist": [
-                                "*"
-                            ],
-                            "URLAllowlist": [
-                                "pccinfo.chingluh.com.vn",
-                                "172.16.16.6",
-                                "172.16.16.70"
-                            ],
-                            "Recommended": [
-                                "pccinfo.chingluh.com.vn"
-                            ],
-                            "IncognitoModeAvailability": "1",
-                            "ForceGoogleSafeSearch": "true",
-                            "HomepageLocation": "https://pccinfo.chingluh.com.vn"
-                        }
-                    }
-                ],
-                "screenCaptureDisabled": true,
-                "factoryResetDisabled": true,
-                "mountPhysicalMediaDisabled": true,
-                "shortSupportMessage": {
-                    "defaultMessage": "Chingluh Group - PCC\nManaged by PCC-COE Team\nSupporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "passwordRequirements": {
-                    "passwordMinimumLength": 6,
-                    "passwordQuality": "ALPHABETIC"
-                },
-                "bluetoothConfigDisabled": true,
-                "cellBroadcastsConfigDisabled": true,
-                "mobileNetworksConfigDisabled": true,
-                "tetheringConfigDisabled": true,
-                "outgoingBeamDisabled": true,
-                "outgoingCallsDisabled": true,
-                "smsDisabled": true,
-                "usbFileTransferDisabled": true,
-                "frpAdminEmails": [
-                    "pccinfo.chingluh@gmail.com"
-                ],
-                "deviceOwnerLockScreenInfo": {
-                    "defaultMessage": "Supporter: hongthinh.le@chingluh.com - Ext: 8859"
-                },
-                "bluetoothDisabled": true,
-                "privateKeySelectionEnabled": true,
-                "advancedSecurityOverrides": {
-                    "developerSettings": "DEVELOPER_SETTINGS_ALLOWED"
-                }
-            }
-        ]
-    },
-    "body": "{\n  \"policies\": [\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clg-pcc-cellphone-smj260g\",\n      \"version\": \"2\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        }\n      ],\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clg-pcc-galaxytaba2016\",\n      \"version\": \"4\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        }\n      ],\n      \"screenCaptureDisabled\": true,\n      \"addUserDisabled\": true,\n      \"mountPhysicalMediaDisabled\": true,\n      \"bluetoothContactSharingDisabled\": true,\n      \"passwordRequirements\": {\n        \"passwordMinimumLength\": 6,\n        \"passwordQuality\": \"ALPHABETIC\"\n      },\n      \"bluetoothConfigDisabled\": true,\n      \"mobileNetworksConfigDisabled\": true,\n      \"outgoingBeamDisabled\": true,\n      \"smsDisabled\": true,\n      \"usbFileTransferDisabled\": true,\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"bluetoothDisabled\": true,\n      \"privateKeySelectionEnabled\": true,\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clg-pcc-qrattendancerecord\",\n      \"version\": \"7\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.chingluhgroup.qrcodeattendancerecord\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        }\n      ],\n      \"screenCaptureDisabled\": true,\n      \"addUserDisabled\": true,\n      \"mountPhysicalMediaDisabled\": true,\n      \"bluetoothContactSharingDisabled\": true,\n      \"passwordRequirements\": {\n        \"passwordMinimumLength\": 6,\n        \"passwordQuality\": \"ALPHABETIC\"\n      },\n      \"bluetoothConfigDisabled\": true,\n      \"mobileNetworksConfigDisabled\": true,\n      \"outgoingBeamDisabled\": true,\n      \"smsDisabled\": true,\n      \"usbFileTransferDisabled\": true,\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"deviceOwnerLockScreenInfo\": {\n        \"defaultMessage\": \"Supporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"bluetoothDisabled\": true,\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-lehongthinh\",\n      \"version\": \"21\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.clockpackage\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.gallery3d\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.google.android.youtube\",\n          \"installType\": \"AVAILABLE\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.zing.zalo\",\n          \"installType\": \"FORCE_INSTALLED\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"DENY\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.takesampleimage\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.takeprofilepicture\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"DENY\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.cameraconnect\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.assetmanagement\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.approveddocuments\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.emmsolution\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\"\n        }\n      ],\n      \"factoryResetDisabled\": true,\n      \"shortSupportMessage\": {\n        \"defaultMessage\": \"Chingluh Group - PCC\\nManaged by PCC-COE Team\\nSupporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"passwordRequirements\": {\n        \"passwordMinimumLength\": 6,\n        \"passwordQuality\": \"ALPHABETIC\"\n      },\n      \"cellBroadcastsConfigDisabled\": true,\n      \"mobileNetworksConfigDisabled\": true,\n      \"tetheringConfigDisabled\": true,\n      \"outgoingBeamDisabled\": true,\n      \"outgoingCallsDisabled\": true,\n      \"smsDisabled\": true,\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"deviceOwnerLockScreenInfo\": {\n        \"defaultMessage\": \"Supporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"locationMode\": \"LOCATION_ENFORCED\",\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxys21-takesampleimage\",\n      \"version\": \"8\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.clockpackage\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.gallery3d\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.youtube\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\",\n          \"managedConfiguration\": {\n            \"URLBlocklist\": [\n              \"*\"\n            ],\n            \"URLAllowlist\": [\n              \"pccinfo.chingluh.com.vn\",\n              \"172.16.16.70\"\n            ],\n            \"Recommended\": [\n              \"pccinfo.chingluh.com.vn\"\n            ],\n            \"IncognitoModeAvailability\": \"1\",\n            \"ForceGoogleSafeSearch\": \"true\",\n            \"HomepageLocation\": \"https://pccinfo.chingluh.com.vn\"\n          }\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.takesampleimage\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.assetmanagement\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        },\n        {\n          \"packageName\": \"chingluhgroup.ecosystem.approveddocuments\",\n          \"installType\": \"AVAILABLE\",\n          \"defaultPermissionPolicy\": \"GRANT\",\n          \"permissionGrants\": [\n            {\n              \"permission\": \"android.permission.CAMERA\",\n              \"policy\": \"GRANT\"\n            }\n          ]\n        }\n      ],\n      \"screenCaptureDisabled\": true,\n      \"addUserDisabled\": true,\n      \"factoryResetDisabled\": true,\n      \"mountPhysicalMediaDisabled\": true,\n      \"modifyAccountsDisabled\": true,\n      \"bluetoothContactSharingDisabled\": true,\n      \"shortSupportMessage\": {\n        \"defaultMessage\": \"Chingluh Group - PCC\\nManaged by PCC-COE Team\\nSupporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"passwordRequirements\": {\n        \"passwordMinimumLength\": 6,\n        \"passwordQuality\": \"ALPHABETIC\"\n      },\n      \"bluetoothConfigDisabled\": true,\n      \"cellBroadcastsConfigDisabled\": true,\n      \"mobileNetworksConfigDisabled\": true,\n      \"tetheringConfigDisabled\": true,\n      \"outgoingBeamDisabled\": true,\n      \"outgoingCallsDisabled\": true,\n      \"smsDisabled\": true,\n      \"usbFileTransferDisabled\": true,\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"deviceOwnerLockScreenInfo\": {\n        \"defaultMessage\": \"Supporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"locationMode\": \"LOCATION_ENFORCED\",\n      \"bluetoothDisabled\": true,\n      \"privateKeySelectionEnabled\": true,\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    },\n    {\n      \"name\": \"enterprises/LC01tmuh69/policies/clgpcc-galaxytaba8-sampleroom\",\n      \"version\": \"6\",\n      \"applications\": [\n        {\n          \"packageName\": \"com.google.android.googlequicksearchbox\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.gm\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.clockpackage\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.gallery3d\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.app.contacts\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.messaging\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.samsung.android.dialer\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.myfiles\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.sec.android.app.camera\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.youtube\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.google.android.apps.docs\",\n          \"installType\": \"BLOCKED\"\n        },\n        {\n          \"packageName\": \"com.adobe.reader\",\n          \"installType\": \"FORCE_INSTALLED\"\n        },\n        {\n          \"packageName\": \"com.android.chrome\",\n          \"installType\": \"FORCE_INSTALLED\",\n          \"managedConfiguration\": {\n            \"URLBlocklist\": [\n              \"*\"\n            ],\n            \"URLAllowlist\": [\n              \"pccinfo.chingluh.com.vn\",\n              \"172.16.16.6\",\n              \"172.16.16.70\"\n            ],\n            \"Recommended\": [\n              \"pccinfo.chingluh.com.vn\"\n            ],\n            \"IncognitoModeAvailability\": \"1\",\n            \"ForceGoogleSafeSearch\": \"true\",\n            \"HomepageLocation\": \"https://pccinfo.chingluh.com.vn\"\n          }\n        }\n      ],\n      \"screenCaptureDisabled\": true,\n      \"factoryResetDisabled\": true,\n      \"mountPhysicalMediaDisabled\": true,\n      \"shortSupportMessage\": {\n        \"defaultMessage\": \"Chingluh Group - PCC\\nManaged by PCC-COE Team\\nSupporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"passwordRequirements\": {\n        \"passwordMinimumLength\": 6,\n        \"passwordQuality\": \"ALPHABETIC\"\n      },\n      \"bluetoothConfigDisabled\": true,\n      \"cellBroadcastsConfigDisabled\": true,\n      \"mobileNetworksConfigDisabled\": true,\n      \"tetheringConfigDisabled\": true,\n      \"outgoingBeamDisabled\": true,\n      \"outgoingCallsDisabled\": true,\n      \"smsDisabled\": true,\n      \"usbFileTransferDisabled\": true,\n      \"frpAdminEmails\": [\n        \"pccinfo.chingluh@gmail.com\"\n      ],\n      \"deviceOwnerLockScreenInfo\": {\n        \"defaultMessage\": \"Supporter: hongthinh.le@chingluh.com - Ext: 8859\"\n      },\n      \"bluetoothDisabled\": true,\n      \"privateKeySelectionEnabled\": true,\n      \"advancedSecurityOverrides\": {\n        \"developerSettings\": \"DEVELOPER_SETTINGS_ALLOWED\"\n      }\n    }\n  ]\n}\n",
-    "headers": {
-        "cache-control": "private",
-        "content-encoding": "gzip",
-        "content-length": "1478",
-        "content-type": "application/json; charset=UTF-8",
-        "date": "Tue, 16 Aug 2022 09:14:24 GMT",
-        "server": "ESF",
-        "vary": "Origin, X-Origin, Referer"
-    },
-    "status": 200,
-    "statusText": null
-}
-*/
