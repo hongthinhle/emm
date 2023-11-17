@@ -24,11 +24,11 @@
     <link href="./res/select2@4.0.13/css/select2.boostrap5.css" rel="stylesheet" type="text/css" charset="utf-8">
     <script src="./res/select2@4.0.13/js/select2.js" type="text/javascript" charset="utf-8"></script>
 
-	<link href="/res/fontawesome/fontawesome.css" rel="stylesheet">
+	<link href="./res/fontawesome/fontawesome.css" rel="stylesheet">
 	
-	<link href="/res/v2022-style.css" rel="stylesheet" type="text/css" charset="utf-8">
-	<link href="/res/v2022-size.css" rel="stylesheet" type="text/css" charset="utf-8">
-    <script src="/res/v2022-style.js" type="text/javascript" charset="utf-8"></script>
+	<link href="./res/v2022-style.css" rel="stylesheet" type="text/css" charset="utf-8">
+	<link href="./res/v2022-size.css" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="./res/v2022-style.js" type="text/javascript" charset="utf-8"></script>
     <script src="./res/js/scripts.js" type="text/javascript" charset="utf-8"></script>
 
     <style media="screen">
@@ -90,7 +90,7 @@
         }
     </style>
 
-    <script src="/res/js/emm_script.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./res/js/emm_script.js" type="text/javascript" charset="utf-8"></script>
     
   </head>
   <body id="emm-body" hidden=true>
@@ -109,36 +109,6 @@
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
-      /**
-       * Sample JavaScript code for androidmanagement.enterprises.devices.list
-       * See instructions for running APIs Explorer code samples locally:
-       * https://developers.google.com/explorer-help/code-samples#javascript
-       */
-
-        // function authenticate() {
-        //     return gapi.auth2.getAuthInstance()
-        //         .signIn({scope: "https://www.googleapis.com/auth/androidmanagement"})
-        //         .then(function() { console.log("Sign-in successful"); },
-        //             function(err) { console.error("Error signing in", err); });
-        // }
-        // function loadClient() {
-        //     gapi.client.setApiKey("AIzaSyBMdeog01FfElba6axOKCU2_EDzKyHa9ak");
-        //     return gapi.client.load("https://androidmanagement.googleapis.com/$discovery/rest?version=v1")
-        //         .then(function() { console.log("GAPI client loaded for API"); },
-        //             function(err) { console.error("Error loading GAPI client for API", err); });
-        // }
-        // // Make sure the client is loaded and sign-in is complete before calling this method.
-        // function execute() {
-        //     return gapi.client.androidmanagement.enterprises.devices.list({
-        //         "parent": "enterprises/LC01tmuh69",
-        //         "pageSize": 20
-        //     })
-        //         .then(function(response) {
-        //                 // Handle the results here (response.result has the parsed body).
-        //                 console.log("Response", response);
-        //             },
-        //             function(err) { console.error("Execute error", err); });
-        // }
         gapi.load("client:auth2", function() {
             gapi.auth2.init({client_id: "824034991696-rgsf5kd8lcvkoreokn4lgiktuf9amhbf.apps.googleusercontent.com"});
         });
@@ -154,7 +124,7 @@
                             <div class="clg-apps-nav-username">
                                 <div class="dropdown">
                                     <a type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="/res/images/avatar/user.png" class="rounded-circle clg-hover-zoom-200" style="width: 40px;height: 40px;object-fit: contain;" alt="Avatar">
+                                        <img src="./res/images/avatar/user.png" class="rounded-circle clg-hover-zoom-200" style="width: 40px;height: 40px;object-fit: contain;" alt="Avatar">
                                         <span id="login-fullname">Fullname</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end">
@@ -168,14 +138,14 @@
                         <div class="clg-apps-nav-logo">
                             <a class="logo-open" href="#">
                                 <div class="logo-content">
-                                    <img src="/res/images/Chingluh_Primary_2.png" alt="Chingluh Logo">
+                                    <img src="#" alt="Chingluh Logo">
                                     <div class="app-title">PCC Information Center</div>
                                     <div class="app-email">pccinfo@chingluh.com</div>
                                 </div>
                             </a>
                             <div class="logo-close">
                                 <div class="logo-content">
-                                    <img src="/res/images/Chingluh_Primary_2.png" alt="Chingluh Logo">
+                                    <img src="#" alt="Chingluh Logo">
                                 </div>
                             </div>
                         </div>
@@ -827,7 +797,7 @@
             </div>
         </div>
 
-        <script src="/res/js/emmsolution.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./res/js/emmsolution.js" type="text/javascript" charset="utf-8"></script>
 		<script>
             const CLG_Toast_Class = new CLG_Toast("");
             const CLG_Navigation_Class = new CLG_Navigation();
